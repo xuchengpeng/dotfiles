@@ -87,7 +87,9 @@ if has("gui_running")
 endif
 
 " Set utf8 as standard encoding and en_US as the standard language
-set encoding=utf8
+set encoding=utf-8
+set fileencoding=utf-8
+set termencoding=utf-8
 
 " Use Unix as the standard file type
 set fileformats=unix,mac,dos
@@ -171,7 +173,6 @@ augroup END
 
 autocmd FileType help nnoremap <buffer> <silent> q :quit<CR>
 
-
 " Search
 if executable('rg')
     set grepprg=rg\ --vimgrep
@@ -199,12 +200,13 @@ Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
+Plug 'LunarWatcher/auto-pairs'
 Plug 'lambdalisue/fern.vim', { 'on': 'Fern' }
 Plug 'preservim/tagbar', { 'on': 'TagbarToggle' }
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
-Plug 'LunarWatcher/auto-pairs'
+Plug 'voldikss/vim-floaterm'
 call plug#end()
 
 
@@ -349,3 +351,17 @@ augroup fern_settings
     autocmd FileType fern call s:fern_init()
 augroup END
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => floaterm
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:floaterm_width = 0.8
+let g:floaterm_height = 0.8
+
+hi Floaterm guibg=black
+
+let g:which_key_map.t = {
+    \ 'name' : '+terminal',
+    \ 't' : ['FloatermToggle', 'toggle'],
+    \ 'n' : ['FloatermNew', 'new'],
+    \ }
