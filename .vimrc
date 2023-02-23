@@ -337,7 +337,7 @@ let g:fern#drawer_keep = 1
 let g:fern#default_hidden = 1
 let g:fern#default_exclude = '.git$'
 
-nnoremap <localleader>t :Fern . -drawer -reveal=% -toggle<CR>
+nnoremap <localleader>t :Fern . -drawer -toggle<CR>
 
 function! s:fern_init() abort
     setlocal nonumber nobuflisted
