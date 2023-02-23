@@ -248,18 +248,18 @@ autocmd! User vim-which-key call which_key#register('<Space>', 'g:which_key_map'
 let g:which_key_map =  {}
 
 let g:which_key_map.b = {
-    \ 'name' : '+buffer' ,
-    \ 'd' : ['bd'        , 'delete-buffer']   ,
-    \ 'f' : ['bfirst'    , 'first-buffer']    ,
-    \ 'l' : ['blast'     , 'last-buffer']     ,
-    \ 'n' : ['bnext'     , 'next-buffer']     ,
-    \ 'p' : ['bprevious' , 'previous-buffer'] ,
-    \ '?' : ['buffers'   , 'buffers']         ,
+    \ 'name' : '+buffer',
+    \ 'd': ['bd', 'delete-buffer'],
+    \ 'f': ['bfirst', 'first-buffer'],
+    \ 'l': ['blast', 'last-buffer'],
+    \ 'n': ['bnext', 'next-buffer'],
+    \ 'p': ['bprevious', 'previous-buffer'],
+    \ '?': ['buffers', 'buffers'],
     \ }
 
 let g:which_key_map.c = {
-    \ 'name' : '+coding',
-    \ 'o' : ['TagbarToggle', 'Outline'],
+    \ 'name': '+coding',
+    \ 'o': ['TagbarToggle', 'Outline'],
     \ }
 
 map <silent> <localleader><cr> :nohlsearch<cr>
@@ -308,20 +308,20 @@ inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
 
 let g:which_key_map.l = {
     \ 'name' : '+lsp',
-    \ 'd' : ['<plug>(lsp-definition)', 'definition'],
-    \ 'f' : ['<plug>(lsp-document-format)', 'format'],
-    \ 's' : ['<plug>(lsp-document-symbol-search)', 'document-symbol'],
-    \ 'S' : ['<plug>(lsp-workspace-symbol-search)', 'workspace-symbol'],
-    \ 'r' : ['<plug>(lsp-references)', 'references'],
-    \ 'R' : ['<plug>(lsp-rename)', 'rename'],
-    \ 'h' : ['<plug>(lsp-hover)', 'hover'],
-    \ 'i' : ['<plug>(lsp-implementation)', 'implementation'],
-    \ 't' : ['<plug>(lsp-type-definition)', 'type-definition'],
-    \ 'g' : {
-        \ 'name' : '+goto',
-        \ 'n' : ['<plug>(lsp-next-diagnostic)', 'next-diagnostic'],
-        \ 'p' : ['<plug>(lsp-previous-diagnostic)', 'previous-diagnostic'],
-    \ },
+    \ 'd': ['<plug>(lsp-definition)', 'definition'],
+    \ 'f': ['<plug>(lsp-document-format)', 'format'],
+    \ 's': ['<plug>(lsp-document-symbol-search)', 'document-symbol'],
+    \ 'S': ['<plug>(lsp-workspace-symbol-search)', 'workspace-symbol'],
+    \ 'r': ['<plug>(lsp-references)', 'references'],
+    \ 'R': ['<plug>(lsp-rename)', 'rename'],
+    \ 'h': ['<plug>(lsp-hover)', 'hover'],
+    \ 'i': ['<plug>(lsp-implementation)', 'implementation'],
+    \ 't': ['<plug>(lsp-type-definition)', 'type-definition'],
+    \ 'g': {
+        \ 'name': '+goto',
+        \ 'n': ['<plug>(lsp-next-diagnostic)', 'next-diagnostic'],
+        \ 'p': ['<plug>(lsp-previous-diagnostic)', 'previous-diagnostic'],
+        \ },
     \ }
 
 
@@ -330,6 +330,31 @@ let g:which_key_map.l = {
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:fzf_layout = { 'down': '40%' }
 let g:fzf_command_prefix = 'Fzf'
+
+let g:fzf_colors = {
+    \ 'fg':      ['fg', 'Normal'],
+    \ 'bg':      ['bg', 'Normal'],
+    \ 'hl':      ['fg', 'Comment'],
+    \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+    \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+    \ 'hl+':     ['fg', 'Statement'],
+    \ 'info':    ['fg', 'PreProc'],
+    \ 'border':  ['fg', 'Ignore'],
+    \ 'prompt':  ['fg', 'Conditional'],
+    \ 'pointer': ['fg', 'Exception'],
+    \ 'marker':  ['fg', 'Keyword'],
+    \ 'spinner': ['fg', 'Label'],
+    \ 'header':  ['fg', 'Comment'],
+    \ }
+
+let g:which_key_map.f = {
+    \ 'name': '+fzf',
+    \ 'b': ['FzfBuffers', 'buffers'],
+    \ 'f': ['FzfFiles', 'find'],
+    \ 'g': ['FzfRg', 'grep'],
+    \ 'r': ['FzfHistory', 'recent files'],
+    \ 't': ['FzfBTags', 'tags'],
+    \ }
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -361,7 +386,7 @@ let g:floaterm_height = 0.8
 hi Floaterm guibg=black
 
 let g:which_key_map.t = {
-    \ 'name' : '+terminal',
-    \ 't' : ['FloatermToggle', 'toggle'],
-    \ 'n' : ['FloatermNew', 'new'],
+    \ 'name': '+terminal',
+    \ 't': ['FloatermToggle', 'toggle'],
+    \ 'n': ['FloatermNew', 'new'],
     \ }
