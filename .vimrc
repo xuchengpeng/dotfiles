@@ -385,9 +385,12 @@ let g:floaterm_width = 0.8
 let g:floaterm_height = 0.8
 
 hi Floaterm guibg=black
+let g:floaterm_keymap_toggle = '<F12>'
 
 let g:which_key_map.t = {
     \ 'name': '+terminal',
-    \ 't': ['FloatermToggle', 'toggle'],
-    \ 'n': ['FloatermNew', 'new'],
+    \ 'k': ['FloatermKill', 'kill'],
+    \ 't': ['FloatermNew', 'new'],
+    \ 'n': ['FloatermNext', 'next'],
+    \ 'p': ['FloatermPrev', 'prev'],
     \ }
