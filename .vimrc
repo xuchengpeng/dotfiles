@@ -96,6 +96,7 @@ set fileformats=unix,mac,dos
 
 " Turn backup off, since most stuff is in SVN, git etc. anyway...
 set nobackup
+set nowritebackup
 set nowb
 set noswapfile
 
