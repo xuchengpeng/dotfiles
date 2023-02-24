@@ -201,9 +201,9 @@ Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
+Plug 'liuchengxu/vista.vim'
 Plug 'LunarWatcher/auto-pairs'
 Plug 'lambdalisue/fern.vim', { 'on': 'Fern' }
-Plug 'preservim/tagbar', { 'on': 'TagbarToggle' }
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -256,11 +256,6 @@ let g:which_key_map.b = {
     \ 'n': ['bnext', 'next-buffer'],
     \ 'p': ['bprevious', 'previous-buffer'],
     \ '?': ['buffers', 'buffers'],
-    \ }
-
-let g:which_key_map.c = {
-    \ 'name': '+coding',
-    \ 'o': ['TagbarToggle', 'Outline'],
     \ }
 
 map <silent> <localleader><cr> :nohlsearch<cr>
@@ -323,6 +318,20 @@ let g:which_key_map.l = {
         \ 'n': ['<plug>(lsp-next-diagnostic)', 'next-diagnostic'],
         \ 'p': ['<plug>(lsp-previous-diagnostic)', 'previous-diagnostic'],
         \ },
+    \ }
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Vista
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:vista_executive_for = {
+    \ 'cpp': 'vim_lsp',
+    \ 'lua': 'vim_lsp',
+    \ }
+
+let g:which_key_map.c = {
+    \ 'name': '+coding',
+    \ 't': ['Vista', 'tags'],
     \ }
 
 
