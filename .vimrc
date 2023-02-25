@@ -313,11 +313,8 @@ let g:which_key_map.l = {
     \ 'h': ['<plug>(lsp-hover)', 'hover'],
     \ 'i': ['<plug>(lsp-implementation)', 'implementation'],
     \ 't': ['<plug>(lsp-type-definition)', 'type-definition'],
-    \ 'g': {
-        \ 'name': '+goto',
-        \ 'n': ['<plug>(lsp-next-diagnostic)', 'next-diagnostic'],
-        \ 'p': ['<plug>(lsp-previous-diagnostic)', 'previous-diagnostic'],
-        \ },
+    \ 'n': ['<plug>(lsp-next-diagnostic)', 'next-diagnostic'],
+    \ 'p': ['<plug>(lsp-previous-diagnostic)', 'previous-diagnostic'],
     \ }
 
 
