@@ -203,14 +203,14 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 Plug 'junegunn/limelight.vim', { 'on': 'Limelight' }
 Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
-Plug 'liuchengxu/vista.vim'
+Plug 'liuchengxu/vista.vim', { 'on': 'Vista' }
 Plug 'LunarWatcher/auto-pairs'
 Plug 'lambdalisue/fern.vim', { 'on': 'Fern' }
 Plug 'RRethy/vim-illuminate'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
-Plug 'voldikss/vim-floaterm'
+Plug 'voldikss/vim-floaterm', { 'on': ['FloatermToggle', 'FloatermNew', 'FloatermKill', 'FloatermNext', 'FloatermPrev'] }
 call plug#end()
 
 
