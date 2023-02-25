@@ -200,6 +200,8 @@ Plug 'itchyny/lightline.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
+Plug 'junegunn/limelight.vim', { 'on': 'Limelight' }
 Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 Plug 'liuchengxu/vista.vim'
 Plug 'LunarWatcher/auto-pairs'
@@ -400,3 +402,16 @@ let g:which_key_map.t = {
     \ 'n': ['FloatermNext', 'next'],
     \ 'p': ['FloatermPrev', 'prev'],
     \ }
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => zen mode
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:goyo_width = '120'
+let g:goyo_height = '85%'
+let g:limelight_conceal_ctermfg = 'Gray'
+let g:limelight_conceal_guifg = 'Gray'
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+
+nnoremap <silent> <leader>z :Goyo<CR>
+let g:which_key_map.z = 'zen mode'
