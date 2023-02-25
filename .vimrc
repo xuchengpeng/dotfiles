@@ -246,11 +246,16 @@ vnoremap <silent> <leader> :<c-u>WhichKeyVisual '<Space>'<CR>
 nnoremap <silent> <localleader> :<c-u>WhichKey ','<CR>
 vnoremap <silent> <localleader> :<c-u>WhichKeyVisual ','<CR>
 
-autocmd! User vim-which-key call which_key#register('<Space>', 'g:which_key_map')
+let g:leader_key_map =  {}
+let g:localleader_key_map = {}
 
-let g:which_key_map =  {}
+augroup which_key_install
+    autocmd!
+    autocmd User vim-which-key call which_key#register('<Space>', 'g:leader_key_map')
+    autocmd User vim-which-key call which_key#register(',', 'g:localleader_key_map')
+augroup END
 
-let g:which_key_map.b = {
+let g:leader_key_map.b = {
     \ 'name' : '+buffer',
     \ 'd': ['bd', 'delete-buffer'],
     \ 'f': ['bfirst', 'first-buffer'],
@@ -260,10 +265,11 @@ let g:which_key_map.b = {
     \ '?': ['buffers', 'buffers'],
     \ }
 
-map <silent> <localleader><cr> :nohlsearch<cr>
+nnoremap <silent> <localleader><cr> :nohlsearch<cr>
 
 " Remove the Windows ^M - when the encodings gets messed up
-nnoremap <localleader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
+nnoremap <silent> <localleader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
+let g:localleader_key_map.m = 'remove Windows ^M'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -304,7 +310,7 @@ inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
 
-let g:which_key_map.l = {
+let g:leader_key_map.l = {
     \ 'name' : '+lsp',
     \ 'd': ['<plug>(lsp-definition)', 'definition'],
     \ 'f': ['<plug>(lsp-document-format)', 'format'],
@@ -328,7 +334,7 @@ let g:vista_executive_for = {
     \ 'lua': 'vim_lsp',
     \ }
 
-let g:which_key_map.c = {
+let g:leader_key_map.c = {
     \ 'name': '+coding',
     \ 't': ['Vista', 'tags'],
     \ }
@@ -356,7 +362,7 @@ let g:fzf_colors = {
     \ 'header':  ['fg', 'Comment'],
     \ }
 
-let g:which_key_map.f = {
+let g:leader_key_map.f = {
     \ 'name': '+fzf',
     \ 'b': ['FzfBuffers', 'buffers'],
     \ 'f': ['FzfFiles', 'find'],
@@ -373,7 +379,8 @@ let g:fern#drawer_keep = 1
 let g:fern#default_hidden = 1
 let g:fern#default_exclude = '.git$'
 
-nnoremap <localleader>t :Fern . -drawer -toggle<CR>
+nnoremap <localleader>e :Fern . -drawer -toggle<CR>
+let g:localleader_key_map.e = 'explore'
 
 function! s:fern_init() abort
     setlocal nonumber nobuflisted
@@ -395,13 +402,14 @@ let g:floaterm_height = 0.8
 hi Floaterm guibg=black
 let g:floaterm_keymap_toggle = '<F12>'
 
-let g:which_key_map.t = {
+let g:leader_key_map.t = {
     \ 'name': '+terminal',
     \ 'k': ['FloatermKill', 'kill'],
     \ 't': ['FloatermNew', 'new'],
     \ 'n': ['FloatermNext', 'next'],
     \ 'p': ['FloatermPrev', 'prev'],
     \ }
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => zen mode
@@ -413,5 +421,5 @@ let g:limelight_conceal_guifg = 'Gray'
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 
-nnoremap <silent> <leader>z :Goyo<CR>
-let g:which_key_map.z = 'zen mode'
+nnoremap <silent> <localleader>z :Goyo<CR>
+let g:localleader_key_map.z = 'zen mode'
