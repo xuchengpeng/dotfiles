@@ -206,6 +206,7 @@ Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 Plug 'liuchengxu/vista.vim'
 Plug 'LunarWatcher/auto-pairs'
 Plug 'lambdalisue/fern.vim', { 'on': 'Fern' }
+Plug 'RRethy/vim-illuminate'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -423,3 +424,10 @@ autocmd! User GoyoLeave Limelight!
 
 nnoremap <silent> <localleader>z :Goyo<CR>
 let g:localleader_key_map.z = 'zen mode'
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => illuminate
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:Illuminate_delay = 200
+let g:Illuminate_ftblacklist = ['fern', 'vista', 'vista_kind', 'vim-plug']
