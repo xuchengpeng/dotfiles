@@ -26,7 +26,7 @@ set wildmenu
 
 " Ignore compiled files
 set wildignore=*.o,*~,*.pyc
-if has("win64") || has("win32")
+if has('win64') || has('win32')
     set wildignore+=.git\*,.hg\*,.svn\*
 else
     set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
@@ -79,7 +79,7 @@ if $COLORTERM == 'gnome-terminal'
 endif
 
 " Set extra options when running in GUI mode
-if has("gui_running")
+if has('gui_running')
     set guioptions-=T
     set guioptions-=e
     set t_Co=256
