@@ -8,7 +8,6 @@ filetype indent on
 " Enable syntax highlighting
 syntax enable
 
-
 " Set to auto read when a file is changed from the outside
 set autoread
 
@@ -129,8 +128,8 @@ map <C-l> <C-W>l
 
 " Specify the behavior when switching between buffers
 try
-  set switchbuf=useopen,usetab,newtab
-  set showtabline=2
+    set switchbuf=useopen,usetab,newtab
+    set showtabline=2
 catch
 endtry
 
@@ -259,12 +258,12 @@ augroup END
 
 let g:leader_key_map.b = {
     \ 'name' : '+buffer',
+    \ 'b': ['buffers', 'buffers'],
     \ 'd': ['bd', 'delete-buffer'],
     \ 'f': ['bfirst', 'first-buffer'],
     \ 'l': ['blast', 'last-buffer'],
     \ 'n': ['bnext', 'next-buffer'],
     \ 'p': ['bprevious', 'previous-buffer'],
-    \ '?': ['buffers', 'buffers'],
     \ }
 
 nnoremap <silent> <localleader><cr> :nohlsearch<cr>
@@ -432,3 +431,18 @@ let g:localleader_key_map.z = 'zen mode'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:Illuminate_delay = 200
 let g:Illuminate_ftblacklist = ['fern', 'vista', 'vista_kind', 'vim-plug']
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => windows
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:leader_key_map.w = {
+    \ 'name': '+windows',
+    \ 'w': ['FzfWindows', 'FzfWindows'],
+    \ 'h': ['<C-W>h', 'window-left'],
+    \ 'j': ['<C-W>j', 'window-blow'],
+    \ 'k': ['<C-W>k', 'window-up'],
+    \ 'l': ['<C-W>l', 'window-right'],
+    \ 's': ['split', 'split-window-blow'],
+    \ 'v': ['vsplit', 'split-window-right'],
+    \ }
