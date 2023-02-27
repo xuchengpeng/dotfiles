@@ -172,7 +172,7 @@ augroup auto_create_dir
     autocmd BufWritePre * call mkdir(expand("<afile>:p:h"), "p")
 augroup END
 
-autocmd FileType help nnoremap <buffer> <silent> q :quit<CR>
+autocmd FileType qf,help,man nnoremap <buffer> <silent> q :quit<CR>
 
 " Search
 if executable('rg')
