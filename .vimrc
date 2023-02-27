@@ -207,6 +207,7 @@ Plug 'liuchengxu/vista.vim', { 'on': 'Vista' }
 Plug 'LunarWatcher/auto-pairs'
 Plug 'lambdalisue/fern.vim', { 'on': 'Fern' }
 Plug 'RRethy/vim-illuminate'
+Plug 'tpope/vim-abolish', { 'on': ['Abolish', 'Subvert'] }
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
