@@ -450,7 +450,7 @@ let g:leader_key_map.w = {
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => startup
+" => startup screen
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! s:startscreen()
     " Don't run if:
@@ -480,28 +480,31 @@ function! s:startscreen()
 
     " Now we can just write to the buffer whatever you want.
     let padwidth = winwidth(0) / 2 - 30
+    if padwidth <= 0
+        let padwidth = 3
+    endif
     let leftpad = repeat(' ', padwidth)
     let header = [
-        \ '                           ',
-        \ '   ██╗   ██╗██╗███╗   ███╗ ',
-        \ '   ██║   ██║██║████╗ ████║ ',
-        \ '   ██║   ██║██║██╔████╔██║ ',
-        \ '   ╚██╗ ██╔╝██║██║╚██╔╝██║ ',
-        \ '    ╚████╔╝ ██║██║ ╚═╝ ██║ ',
-        \ '     ╚═══╝  ╚═╝╚═╝     ╚═╝ ',
-        \ '                           ',
+        \ '                          ',
+        \ '  ██╗   ██╗██╗███╗   ███╗ ',
+        \ '  ██║   ██║██║████╗ ████║ ',
+        \ '  ██║   ██║██║██╔████╔██║ ',
+        \ '  ╚██╗ ██╔╝██║██║╚██╔╝██║ ',
+        \ '   ╚████╔╝ ██║██║ ╚═╝ ██║ ',
+        \ '    ╚═══╝  ╚═╝╚═╝     ╚═╝ ',
+        \ '                          ',
         \ ]
     for line in header
         call append('$', leftpad . line)
     endfor
     let lists = [
-        \ "   [e]          New file",
-        \ "   [f]          Find file",
-        \ "   [g]          Grep word",
-        \ "   [r]          Recent",
-        \ "   [s]          Settings",
-        \ "   [u]          Update plugins",
-        \ "   [q]          Quit VIM",
+        \ '> New file               e',
+        \ '> Find file              f',
+        \ '> Grep word              g',
+        \ '> Recent                 r',
+        \ '> Settings               s',
+        \ '> Update plugins         u',
+        \ '> Quit VIM               q',
         \ ]
     for line in lists
         call append('$', leftpad . line)
