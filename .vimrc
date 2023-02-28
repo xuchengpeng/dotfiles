@@ -217,6 +217,7 @@ call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colorscheme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set termguicolors
 set background=dark
 silent! colorscheme onedark
 
