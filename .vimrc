@@ -447,3 +447,78 @@ let g:leader_key_map.w = {
     \ 's': ['split', 'split-window-blow'],
     \ 'v': ['vsplit', 'split-window-right'],
     \ }
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => startup
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! s:startscreen()
+    " Don't run if:
+    " - there are commandline arguments;
+    " - the buffer isn't empty (e.g. cmd | vi -);
+    " - we're not invoked as vim or gvim;
+    " - we're starting in insert mode.
+    if argc() || line2byte('$') != -1 || v:progname !~? '^[-gmnq]\=vim\=x\=\%[\.exe]$' || &insertmode
+        return
+    endif
+
+    " Start a new buffer...
+    enew
+
+    " ...and set some options for it
+    setlocal
+        \ bufhidden=wipe
+        \ buftype=nofile
+        \ nobuflisted
+        \ nocursorcolumn
+        \ nocursorline
+        \ nolist
+        \ nonumber
+        \ noswapfile
+        \ norelativenumber
+        \ statusline=\ vim
+
+    " Now we can just write to the buffer whatever you want.
+    let header = [
+        \ '                           ',
+        \ '   ██╗   ██╗██╗███╗   ███╗ ',
+        \ '   ██║   ██║██║████╗ ████║ ',
+        \ '   ██║   ██║██║██╔████╔██║ ',
+        \ '   ╚██╗ ██╔╝██║██║╚██╔╝██║ ',
+        \ '    ╚████╔╝ ██║██║ ╚═╝ ██║ ',
+        \ '     ╚═══╝  ╚═╝╚═╝     ╚═╝ ',
+        \ '                           ',
+        \ ]
+    for line in header
+        call append('$', line)
+    endfor
+    let lists = [
+        \ "   [e]          New file",
+        \ "   [f]          Find file",
+        \ "   [g]          Grep word",
+        \ "   [r]          Recent",
+        \ "   [s]          Settings",
+        \ "   [u]          Update plugins",
+        \ "   [q]          Quit VIM",
+        \ ]
+    for line in lists
+        call append('$', line)
+    endfor
+
+    " No modifications to this buffer
+    setlocal nomodifiable nomodified
+
+    " When we go to insert mode start a new buffer, and start insert
+    nnoremap <buffer><silent> e :enew <bar> startinsert<CR>
+    nnoremap <buffer><silent> f :FzfFiles<CR>
+    nnoremap <buffer><silent> g :FzfRg<CR>
+    nnoremap <buffer><silent> r :FzfHistory<CR>
+    nnoremap <buffer><silent> s :e $MYVIMRC<CR>
+    nnoremap <buffer><silent> u :PlugUpdate<CR>
+    nnoremap <buffer><silent> q :quit<CR>
+endfunction
+
+augroup startscreen
+    autocmd!
+    autocmd VimEnter * call s:startscreen()
+augroup END
