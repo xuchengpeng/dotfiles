@@ -452,16 +452,7 @@ let g:leader_key_map.w = {
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => startup screen
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! s:startscreen()
-    " Don't run if:
-    " - there are commandline arguments;
-    " - the buffer isn't empty (e.g. cmd | vi -);
-    " - we're not invoked as vim or gvim;
-    " - we're starting in insert mode.
-    if argc() || line2byte('$') != -1 || v:progname !~? '^[-gmnq]\=vim\=x\=\%[\.exe]$' || &insertmode
-        return
-    endif
-
+function! s:draw_startscreen() abort
     " Start a new buffer...
     enew
 
@@ -476,11 +467,12 @@ function! s:startscreen()
         \ nonumber
         \ noswapfile
         \ norelativenumber
-        \ statusline=\ vim
+        \ statusline=%y
+        \ filetype=startscreen
 
     " Now we can just write to the buffer whatever you want.
     let padwidth = winwidth(0) / 2 - 30
-    if padwidth <= 0
+    if padwidth < 3
         let padwidth = 3
     endif
     let leftpad = repeat(' ', padwidth)
@@ -523,7 +515,29 @@ function! s:startscreen()
     nnoremap <buffer><silent> q :quit<CR>
 endfunction
 
+function! s:redraw_startscreen() abort
+    if &filetype ==# 'startscreen'
+        call s:draw_startscreen()
+    endif
+endfunction
+
+function! s:startscreen() abort
+    " Don't run if:
+    " - there are commandline arguments;
+    " - the buffer isn't empty (e.g. cmd | vi -);
+    " - we're not invoked as vim or gvim;
+    " - we're starting in insert mode.
+    if argc() || line2byte('$') != -1 || v:progname !~? '^[-gmnq]\=vim\=x\=\%[\.exe]$' || &insertmode
+        return
+    endif
+
+    call s:draw_startscreen()
+endfunction
+
 augroup startscreen
     autocmd!
     autocmd VimEnter * call s:startscreen()
+    autocmd VimResized * call s:redraw_startscreen()
 augroup END
+
+command! StartScreen :call s:draw_startscreen()
