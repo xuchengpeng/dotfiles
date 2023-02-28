@@ -145,17 +145,7 @@ set cursorline
 set timeout
 set timeoutlen=500
 
-set completeopt=menuone,noselect
-
-" Delete trailing white space on save, useful for some filetypes ;)
-function! s:clean_extra_spaces()
-    let save_cursor = getpos(".")
-    let old_query = getreg('/')
-    silent! %s/\s\+$//e
-    call setpos('.', save_cursor)
-    call setreg('/', old_query)
-endfunction
-autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call s:clean_extra_spaces()
+set completeopt=menu,menuone,noselect
 
 autocmd FocusGained,BufEnter * checktime
 
