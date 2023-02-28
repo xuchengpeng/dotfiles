@@ -479,6 +479,8 @@ function! s:startscreen()
         \ statusline=\ vim
 
     " Now we can just write to the buffer whatever you want.
+    let padwidth = winwidth(0) / 2 - 30
+    let leftpad = repeat(' ', padwidth)
     let header = [
         \ '                           ',
         \ '   ██╗   ██╗██╗███╗   ███╗ ',
@@ -490,7 +492,7 @@ function! s:startscreen()
         \ '                           ',
         \ ]
     for line in header
-        call append('$', line)
+        call append('$', leftpad . line)
     endfor
     let lists = [
         \ "   [e]          New file",
@@ -502,7 +504,7 @@ function! s:startscreen()
         \ "   [q]          Quit VIM",
         \ ]
     for line in lists
-        call append('$', line)
+        call append('$', leftpad . line)
     endfor
 
     " No modifications to this buffer
