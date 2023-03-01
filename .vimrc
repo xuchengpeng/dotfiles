@@ -481,9 +481,9 @@ function! s:draw_startscreen() abort
     endfor
     let lists = [
         \ '> New file               e',
-        \ '> Find file              f',
+        \ '> Find files             f',
         \ '> Grep word              g',
-        \ '> Recent                 r',
+        \ '> Recent files           r',
         \ '> Settings               s',
         \ '> Update plugins         u',
         \ '> Quit VIM               q',
