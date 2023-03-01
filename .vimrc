@@ -72,6 +72,10 @@ set foldcolumn=1
 " Set regular expression engine automatically
 set regexpengine=0
 
+set mouse=a
+
+set termguicolors
+
 " Enable 256 colors palette in Gnome Terminal
 if $COLORTERM == 'gnome-terminal'
     set t_Co=256
@@ -83,6 +87,23 @@ if has('gui_running')
     set guioptions-=e
     set t_Co=256
     set guitablabel=%M\ %t
+endif
+
+" Note: This should be set after `set termguicolors` or `set t_Co=256`.
+" see :help termcap-cursor-shape
+"
+" Reference chart of values:
+"   Ps = 0  -> blinking block.
+"   Ps = 1  -> blinking block (default).
+"   Ps = 2  -> steady block.
+"   Ps = 3  -> blinking underline.
+"   Ps = 4  -> steady underline.
+"   Ps = 5  -> blinking bar (xterm).
+"   Ps = 6  -> steady bar (xterm).
+if &term =~ 'xterm' || &term == 'win32'
+    let &t_SI = "\e[6 q"
+    let &t_SR = "\e[4 q"
+    let &t_EI = "\e[2 q"
 endif
 
 " Set utf8 as standard encoding and en_US as the standard language
@@ -207,7 +228,6 @@ call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colorscheme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set termguicolors
 set background=dark
 silent! colorscheme onedark
 
