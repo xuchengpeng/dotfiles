@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/xuchengpeng/dotfiles/compare/v1.2.0...v1.2.1) (2023-03-04)
+
+
+### Bug Fixes
+
+* **floaterm:** add btm,gdu,lazygit commands ([00520c0](https://github.com/xuchengpeng/dotfiles/commit/00520c0ab39d52aba0d32e9e328ed5803fbf4b98))
+
 ## [1.2.0](https://github.com/xuchengpeng/dotfiles/compare/v1.1.0...v1.2.0) (2023-03-04)
 
 
