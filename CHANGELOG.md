@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://github.com/xuchengpeng/dotfiles/compare/v1.1.0...v1.2.0) (2023-03-04)
+
+
+### Features
+
+* **editor:** better splitting/joining blocks ([4b25366](https://github.com/xuchengpeng/dotfiles/commit/4b25366295af6adfe2c8538ac39ffedc3c716629))
+
+
+### Bug Fixes
+
+* **nvim:** bump 9285bce ([765cb38](https://github.com/xuchengpeng/dotfiles/commit/765cb38009c4195347fe5bdbf4d3c69f98e1c22d))
+
 ## [1.1.0](https://github.com/xuchengpeng/dotfiles/compare/v1.0.2...v1.1.0) (2023-03-04)
 
 
