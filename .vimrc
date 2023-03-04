@@ -221,6 +221,7 @@ Plug 'LunarWatcher/auto-pairs'
 Plug 'lambdalisue/fern.vim', { 'on': 'Fern' }
 Plug 'RRethy/vim-illuminate'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'voldikss/vim-floaterm', { 'on': ['FloatermToggle', 'FloatermNew', 'FloatermKill', 'FloatermNext', 'FloatermPrev'] }
