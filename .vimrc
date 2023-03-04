@@ -208,6 +208,7 @@ Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'airblade/vim-gitgutter'
+Plug 'arcticicestudio/nord-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf'
@@ -230,7 +231,7 @@ call plug#end()
 " => Colorscheme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set background=dark
-silent! colorscheme onedark
+silent! colorscheme nord
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
