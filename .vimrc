@@ -226,6 +226,7 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'voldikss/vim-floaterm', { 'on': ['FloatermToggle', 'FloatermNew', 'FloatermKill', 'FloatermNext', 'FloatermPrev'] }
+Plug 'Yggdroot/indentLine'
 call plug#end()
 
 
@@ -461,6 +462,13 @@ let g:localleader_key_map.z = 'zen mode'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:Illuminate_delay = 200
 let g:Illuminate_ftblacklist = ['fern', 'qf', 'vista', 'vista_kind', 'vim-plug']
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => indentLine
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:indentLine_fileTypeExclude = ['startscreen']
+let g:indentLine_bufTypeExclude = ['fern', 'qf', 'help', 'terminal', 'vista', 'vista_kind']
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
