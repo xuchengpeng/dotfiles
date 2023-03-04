@@ -437,8 +437,15 @@ let g:floaterm_height = 0.8
 hi Floaterm guibg=black
 let g:floaterm_keymap_toggle = '<F12>'
 
+command! Btm FloatermNew btm
+command! Gdu FloatermNew gdu
+command! Lazygit FloatermNew lazygit
+
 let g:leader_key_map.t = {
     \ 'name': '+terminal',
+    \ 'b': ['Btm', 'bottom'],
+    \ 'd': ['Gdu', 'disk usage'],
+    \ 'g': ['Lazygit', 'lazygit'],
     \ 'k': ['FloatermKill', 'kill'],
     \ 't': ['FloatermNew', 'new'],
     \ 'n': ['FloatermNext', 'next'],
