@@ -165,6 +165,7 @@ set cursorline
 
 set timeout
 set timeoutlen=500
+set updatetime=100
 
 set completeopt=menu,menuone,noselect
 
@@ -206,6 +207,7 @@ Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
+Plug 'airblade/vim-gitgutter'
 Plug 'itchyny/lightline.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf'
