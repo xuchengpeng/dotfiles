@@ -208,6 +208,7 @@ Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'airblade/vim-gitgutter'
+Plug 'AndrewRadev/splitjoin.vim', { 'on': ['SplitjoinJoin', 'SplitjoinSplit'] }
 Plug 'itchyny/lightline.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf'
@@ -353,6 +354,8 @@ let g:vista_executive_for = {
 
 let g:leader_key_map.c = {
     \ 'name': '+coding',
+    \ 'j': ['SplitjoinJoin', 'join'],
+    \ 's': ['SplitjoinSplit', 'split'],
     \ 't': ['Vista', 'tags'],
     \ }
 
