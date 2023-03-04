@@ -219,6 +219,7 @@ Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 Plug 'liuchengxu/vista.vim', { 'on': 'Vista' }
 Plug 'LunarWatcher/auto-pairs'
 Plug 'lambdalisue/fern.vim', { 'on': 'Fern' }
+Plug 'mhinz/vim-grepper', { 'on': ['Grepper', '<plug>(GrepperOperator)']  }
 Plug 'RRethy/vim-illuminate'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
@@ -385,6 +386,18 @@ let g:leader_key_map.f = {
     \ 'r': ['FzfHistory', 'recent files'],
     \ 't': ['FzfBTags', 'tags'],
     \ }
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-grepper
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:grepper = {
+    \ 'tools': ['rg', 'git'],
+    \ 'rg': {
+    \   'grepprg':    'rg --color never --smart-case --vimgrep',
+    \   'grepformat': '%f:%l:%m',
+    \   'escape':     '\+*^$()[]',
+    \ }}
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
