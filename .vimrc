@@ -399,6 +399,9 @@ let g:grepper = {
     \   'escape':     '\+*^$()[]',
     \ }}
 
+nnoremap <silent> <localleader>g :Grepper<CR>
+let g:localleader_key_map.g = 'grep'
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => fern
