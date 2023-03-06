@@ -471,7 +471,7 @@ let g:localleader_key_map.z = 'zen mode'
 " => illuminate
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:Illuminate_delay = 200
-let g:Illuminate_ftblacklist = ['fern', 'qf', 'vista', 'vista_kind', 'vim-plug']
+let g:Illuminate_ftblacklist = ['fern', 'qf', 'vista', 'vista_kind', 'vim-plug', 'startscreen']
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
