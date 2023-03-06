@@ -200,6 +200,10 @@ if empty(glob(s:plug_path))
     silent !curl -fLo s:plug_path --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 endif
 silent! execute 'source ' . s:plug_path
+" Run PlugInstall if there are missing plugins
+autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \| PlugInstall --sync
+  \| endif
 
 call plug#begin(s:plug_dir)
 Plug 'prabirshrestha/vim-lsp'
