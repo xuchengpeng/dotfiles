@@ -159,6 +159,7 @@ set laststatus=2
 
 " Show line number
 set number
+set numberwidth=2
 
 " Highlight current line
 set cursorline
