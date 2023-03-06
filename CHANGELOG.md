@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.2.2](https://github.com/xuchengpeng/dotfiles/compare/v1.2.1...v1.2.2) (2023-03-06)
+
+
+### Bug Fixes
+
+* **illuminate:** no highlighting for startscreen ([cfe5ae3](https://github.com/xuchengpeng/dotfiles/commit/cfe5ae3de9041978f1bed7603d0092b629e7ad33))
+* **vim-plug:** lazy load plugins ([c17ecda](https://github.com/xuchengpeng/dotfiles/commit/c17ecdab24756bfe63498d1ed479294a038e306e))
+* **vim-plug:** run PlugInstall if there are missing plugins ([e5246e6](https://github.com/xuchengpeng/dotfiles/commit/e5246e6ccec46ac4f997e31f425fbacc5cec8952))
+
 ## [1.2.1](https://github.com/xuchengpeng/dotfiles/compare/v1.2.0...v1.2.1) (2023-03-04)
 
 
