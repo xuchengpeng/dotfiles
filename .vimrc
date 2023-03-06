@@ -206,12 +206,12 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
   \| endif
 
 call plug#begin(s:plug_dir)
-Plug 'prabirshrestha/vim-lsp'
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
-Plug 'hrsh7th/vim-vsnip'
-Plug 'hrsh7th/vim-vsnip-integ'
-Plug 'airblade/vim-gitgutter'
+Plug 'prabirshrestha/vim-lsp', { 'on': [] }
+Plug 'prabirshrestha/asyncomplete.vim', { 'on': [] }
+Plug 'prabirshrestha/asyncomplete-lsp.vim', { 'on': [] }
+Plug 'hrsh7th/vim-vsnip', { 'on': [] }
+Plug 'hrsh7th/vim-vsnip-integ', { 'on': [] }
+Plug 'airblade/vim-gitgutter', { 'on': [] }
 Plug 'AndrewRadev/splitjoin.vim', { 'on': ['SplitjoinJoin', 'SplitjoinSplit'] }
 Plug 'itchyny/lightline.vim'
 Plug 'joshdick/onedark.vim'
@@ -221,18 +221,31 @@ Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 Plug 'junegunn/limelight.vim', { 'on': 'Limelight' }
 Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 Plug 'liuchengxu/vista.vim', { 'on': 'Vista' }
-Plug 'LunarWatcher/auto-pairs'
+Plug 'LunarWatcher/auto-pairs', { 'on': [] }
 Plug 'lambdalisue/fern.vim', { 'on': 'Fern' }
-Plug 'matze/vim-move'
+Plug 'matze/vim-move', { 'on': [] }
 Plug 'mhinz/vim-grepper', { 'on': ['Grepper', '<plug>(GrepperOperator)']  }
-Plug 'RRethy/vim-illuminate'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
+Plug 'RRethy/vim-illuminate', { 'on': [] }
+Plug 'tpope/vim-commentary', { 'on': [] }
+Plug 'tpope/vim-endwise', { 'on': [] }
+Plug 'tpope/vim-fugitive', { 'on': [] }
+Plug 'tpope/vim-surround', { 'on': [] }
 Plug 'voldikss/vim-floaterm', { 'on': ['FloatermToggle', 'FloatermNew', 'FloatermKill', 'FloatermNext', 'FloatermPrev'] }
-Plug 'Yggdroot/indentLine'
+Plug 'Yggdroot/indentLine', { 'on': [] }
 call plug#end()
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => lazy load
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+augroup lazy_load
+    autocmd!
+    autocmd BufReadPost,BufNewFile * call plug#load(
+        \ 'auto-pairs', 'indentLine', 'vim-commentary', 'vim-fugitive',
+        \ 'vim-gitgutter', 'vim-illuminate', 'vim-move',
+        \ 'vim-lsp', 'asyncomplete.vim', 'asyncomplete-lsp.vim', 'vim-vsnip', 'vim-vsnip-integ')
+    autocmd InsertEnter * call plug#load('vim-endwise', 'vim-surround')
+augroup END
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
