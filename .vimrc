@@ -335,10 +335,20 @@ inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
 
+function! s:lsp_document_format() abort
+    if &filetype ==# 'lua' && executable('stylua')
+        silent !stylua %:p
+    else
+        silent! execute 'LspDocumentFormat'
+    endif
+endfunction
+
+command! DocumentFormat :call s:lsp_document_format()
+
 let g:leader_key_map.l = {
     \ 'name' : '+lsp',
     \ 'd': ['<plug>(lsp-definition)', 'definition'],
-    \ 'f': ['<plug>(lsp-document-format)', 'format'],
+    \ 'f': ['DocumentFormat', 'format'],
     \ 's': ['<plug>(lsp-document-symbol-search)', 'document-symbol'],
     \ 'S': ['<plug>(lsp-workspace-symbol-search)', 'workspace-symbol'],
     \ 'r': ['<plug>(lsp-references)', 'references'],
