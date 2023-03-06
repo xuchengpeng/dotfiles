@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.2.3](https://github.com/xuchengpeng/dotfiles/compare/v1.2.2...v1.2.3) (2023-03-06)
+
+
+### Bug Fixes
+
+* **floaterm:** bind glow with &lt;leader&gt;tg ([8661d53](https://github.com/xuchengpeng/dotfiles/commit/8661d531e6a24b7e0f1b1cdaf8978944f34e8614))
+* **format:** indent lua with 2 spaces ([d532668](https://github.com/xuchengpeng/dotfiles/commit/d5326681642a445432b1fd3709f7f6eb5f5ddead))
+* **lua:** format with stylua ([6853ddd](https://github.com/xuchengpeng/dotfiles/commit/6853ddd60ae376f01d62d79c72ce48aae10d8693))
+* **nvim:** bump 6ec89fa ([2c66959](https://github.com/xuchengpeng/dotfiles/commit/2c66959a1005937b3049e94599e2ef6570284a1b))
+* **startscreen:** improve menu ([84e8afb](https://github.com/xuchengpeng/dotfiles/commit/84e8afb783dd3e5e414df16c53fa283af8028eac))
+* **ui:** set numberwidth to 2 ([e7ec589](https://github.com/xuchengpeng/dotfiles/commit/e7ec589dbd8aa64d1ba81fdbbc4626ec57e874c3))
+
+
+### Reverts
+
+* Revert "fix(vim-plug): lazy load plugins" ([8a14b5a](https://github.com/xuchengpeng/dotfiles/commit/8a14b5a81d74e9aa7831971c876612ee0f4a1a59))
+
 ## [1.2.2](https://github.com/xuchengpeng/dotfiles/compare/v1.2.1...v1.2.2) (2023-03-06)
 
 
