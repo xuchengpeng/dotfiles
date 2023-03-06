@@ -554,12 +554,12 @@ function! s:draw_startscreen() abort
         call append('$', leftpad . line)
     endfor
     let lists = [
-        \ '> New file               e',
-        \ '> Find files             f',
-        \ '> Grep word              g',
-        \ '> Recent files           r',
+        \ '> New File               e',
+        \ '> Find File              f',
+        \ '> Find Word              g',
+        \ '> Recents                r',
         \ '> Settings               s',
-        \ '> Update plugins         u',
+        \ '> Update Plugins         u',
         \ '> Quit VIM               q',
         \ ]
     for line in lists
