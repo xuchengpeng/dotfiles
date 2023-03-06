@@ -457,12 +457,14 @@ let g:floaterm_keymap_toggle = '<F12>'
 command! Btm FloatermNew btm
 command! Gdu FloatermNew gdu
 command! Lazygit FloatermNew lazygit
+command! Glow FloatermNew glow
 
 let g:leader_key_map.t = {
     \ 'name': '+terminal',
     \ 'b': ['Btm', 'bottom'],
     \ 'd': ['Gdu', 'disk usage'],
-    \ 'g': ['Lazygit', 'lazygit'],
+    \ 'l': ['Lazygit', 'lazygit'],
+    \ 'g': ['Glow', 'glow'],
     \ 'k': ['FloatermKill', 'kill'],
     \ 't': ['FloatermNew', 'new'],
     \ 'n': ['FloatermNext', 'next'],
