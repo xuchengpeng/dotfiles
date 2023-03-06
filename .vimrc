@@ -186,6 +186,8 @@ augroup END
 
 autocmd FileType qf,help,man,git nnoremap <buffer> <silent> q :quit<CR>
 
+autocmd FileType lua setlocal tabstop=2 | setlocal softtabstop=2 | setlocal shiftwidth=2
+
 " Search
 if executable('rg')
     set grepprg=rg\ --vimgrep
