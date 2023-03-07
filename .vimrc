@@ -338,6 +338,8 @@ inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
 function! s:document_format() abort
     if &filetype ==# 'lua' && executable('stylua')
         silent !stylua %:p
+    elseif &filetype ==# 'sh' && executable('shfmt')
+        silent !shfmt -l -w %:p
     else
         silent! execute 'LspDocumentFormat'
     endif
