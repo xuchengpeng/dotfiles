@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.2.4](https://github.com/xuchengpeng/dotfiles/compare/v1.2.3...v1.2.4) (2023-03-07)
+
+
+### Bug Fixes
+
+* autoread after 200ms ([dfabc84](https://github.com/xuchengpeng/dotfiles/commit/dfabc841d0b8392270cb81d27c704219da3ae741))
+* **nvim:** bump 94aa1c3 ([c0dab3c](https://github.com/xuchengpeng/dotfiles/commit/c0dab3c794bc71b8fbba2f497c81d7cd83f8d636))
+* **sh:** format shell with shfmt ([28eaaa9](https://github.com/xuchengpeng/dotfiles/commit/28eaaa9241a07bb5af0ef8b7e21d9a9b42574aff))
+
 ## [1.2.3](https://github.com/xuchengpeng/dotfiles/compare/v1.2.2...v1.2.3) (2023-03-06)
 
 
