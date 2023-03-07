@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.2.5](https://github.com/xuchengpeng/dotfiles/compare/v1.2.4...v1.2.5) (2023-03-07)
+
+
+### Bug Fixes
+
+* bind Vista outline with &lt;leader&gt;co ([b81df68](https://github.com/xuchengpeng/dotfiles/commit/b81df6863aaf556d0905a15e3ce975a753b4b191))
+* **keymaps:** add git keymaps ([c4da298](https://github.com/xuchengpeng/dotfiles/commit/c4da29860a20ca70f85b55b2ab2b56d930760527))
+* **nvim:** bump 224963c ([f597973](https://github.com/xuchengpeng/dotfiles/commit/f5979737ec8e93ef6342053d97612ddff7b9e804))
+
 ## [1.2.4](https://github.com/xuchengpeng/dotfiles/compare/v1.2.3...v1.2.4) (2023-03-07)
 
 
