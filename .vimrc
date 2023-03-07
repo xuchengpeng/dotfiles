@@ -375,7 +375,7 @@ let g:leader_key_map.c = {
     \ 'name': '+coding',
     \ 'j': ['SplitjoinJoin', 'join'],
     \ 's': ['SplitjoinSplit', 'split'],
-    \ 't': ['Vista', 'tags'],
+    \ 'o': ['Vista', 'outline'],
     \ }
 
 
