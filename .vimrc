@@ -184,7 +184,7 @@ augroup auto_create_dir
     autocmd BufWritePre * call mkdir(expand("<afile>:p:h"), "p")
 augroup END
 
-autocmd FileType qf,help,man,git nnoremap <buffer> <silent> q :quit<CR>
+autocmd FileType qf,help,man nnoremap <buffer> <silent> q :quit<CR>
 
 autocmd FileType lua setlocal tabstop=2 | setlocal softtabstop=2 | setlocal shiftwidth=2
 
@@ -281,20 +281,20 @@ augroup which_key_install
 augroup END
 
 let g:leader_key_map.b = {
-    \ 'name' : '+buffer',
-    \ 'b': ['buffers', 'buffers'],
-    \ 'd': ['bd', 'delete-buffer'],
-    \ 'f': ['bfirst', 'first-buffer'],
-    \ 'l': ['blast', 'last-buffer'],
-    \ 'n': ['bnext', 'next-buffer'],
-    \ 'p': ['bprevious', 'previous-buffer'],
+    \ 'name' : '+Buffer',
+    \ 'b': ['buffers', 'Buffers'],
+    \ 'd': ['bdelete', 'Delete Buffer'],
+    \ 'f': ['bfirst', 'First Buffer'],
+    \ 'l': ['blast', 'Last Buffer'],
+    \ 'n': ['bnext', 'Next Buffer'],
+    \ 'p': ['bprevious', 'Previous Buffer'],
     \ }
 
 nnoremap <silent> <localleader><cr> :nohlsearch<cr>
 
 " Remove the Windows ^M - when the encodings gets messed up
 nnoremap <silent> <localleader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
-let g:localleader_key_map.m = 'remove Windows ^M'
+let g:localleader_key_map.m = 'Remove Windows ^M'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -348,18 +348,18 @@ endfunction
 command! DocumentFormat :call s:document_format()
 
 let g:leader_key_map.l = {
-    \ 'name' : '+lsp',
-    \ 'd': ['<plug>(lsp-definition)', 'definition'],
-    \ 'f': ['DocumentFormat', 'format'],
-    \ 's': ['<plug>(lsp-document-symbol-search)', 'document-symbol'],
-    \ 'S': ['<plug>(lsp-workspace-symbol-search)', 'workspace-symbol'],
-    \ 'r': ['<plug>(lsp-references)', 'references'],
-    \ 'R': ['<plug>(lsp-rename)', 'rename'],
-    \ 'h': ['<plug>(lsp-hover)', 'hover'],
-    \ 'i': ['<plug>(lsp-implementation)', 'implementation'],
-    \ 't': ['<plug>(lsp-type-definition)', 'type-definition'],
-    \ 'n': ['<plug>(lsp-next-diagnostic)', 'next-diagnostic'],
-    \ 'p': ['<plug>(lsp-previous-diagnostic)', 'previous-diagnostic'],
+    \ 'name' : '+Lsp',
+    \ 'd': ['<plug>(lsp-definition)', 'Goto Definition'],
+    \ 'f': ['DocumentFormat', 'Format'],
+    \ 's': ['<plug>(lsp-document-symbol-search)', 'Document Symbol'],
+    \ 'S': ['<plug>(lsp-workspace-symbol-search)', 'Workspace Symbol'],
+    \ 'r': ['<plug>(lsp-references)', 'References'],
+    \ 'R': ['<plug>(lsp-rename)', 'Rename'],
+    \ 'h': ['<plug>(lsp-hover)', 'Hover'],
+    \ 'i': ['<plug>(lsp-implementation)', 'Goto Implementation'],
+    \ 't': ['<plug>(lsp-type-definition)', 'Goto Type Definition'],
+    \ 'n': ['<plug>(lsp-next-diagnostic)', 'Next Diagnostic'],
+    \ 'p': ['<plug>(lsp-previous-diagnostic)', 'Prev Diagnostic'],
     \ }
 
 
@@ -372,10 +372,11 @@ let g:vista_executive_for = {
     \ }
 
 let g:leader_key_map.c = {
-    \ 'name': '+coding',
-    \ 'j': ['SplitjoinJoin', 'join'],
-    \ 's': ['SplitjoinSplit', 'split'],
-    \ 'o': ['Vista', 'outline'],
+    \ 'name': '+Coding',
+    \ 'e': ['FernExplore', 'Explore'],
+    \ 'j': ['SplitjoinJoin', 'Join'],
+    \ 's': ['SplitjoinSplit', 'Split'],
+    \ 'o': ['Vista', 'Outline'],
     \ }
 
 
@@ -402,12 +403,34 @@ let g:fzf_colors = {
     \ }
 
 let g:leader_key_map.f = {
-    \ 'name': '+fzf',
-    \ 'b': ['FzfBuffers', 'buffers'],
-    \ 'f': ['FzfFiles', 'find'],
-    \ 'g': ['FzfRg', 'grep'],
-    \ 'r': ['FzfHistory', 'recent files'],
-    \ 't': ['FzfBTags', 'tags'],
+    \ 'name': '+Fzf',
+    \ 'b': ['FzfBuffers', 'Buffers'],
+    \ 'f': ['FzfFiles', 'Find Files'],
+    \ 'g': ['FzfRg', 'Grep'],
+    \ 'r': ['FzfHistory', 'Recent Files'],
+    \ 't': ['FzfBTags', 'Tags'],
+    \ }
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => git
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:gitgutter_map_keys = 0
+
+autocmd FileType diff,git,fugitiveblame nnoremap <buffer> <silent> q :quit<CR>
+
+command! GitBlame Git blame
+command! GitDiff Git diff
+
+let g:leader_key_map.g = {
+    \ 'name': '+Git',
+    \ 'b': ['GitBlame', 'Blame'],
+    \ 'd': ['GitDiff', 'Diff'],
+    \ 'P': ['GitGutterPreviewHunk', 'Preview Hunk'],
+    \ 'p': ['GitGutterPrevHunk', 'Prev Hunk'],
+    \ 'n': ['GitGutterNextHunk', 'Next Hunk'],
+    \ 's': ['GitGutterStageHunk', 'Stage Hunk'],
+    \ 'u': ['GitGutterUndoHunk', 'Undo Hunk'],
     \ }
 
 
@@ -423,7 +446,7 @@ let g:grepper = {
     \ }}
 
 nnoremap <silent> <localleader>g :Grepper<CR>
-let g:localleader_key_map.g = 'grep'
+let g:localleader_key_map.g = 'Grep'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -433,8 +456,10 @@ let g:fern#drawer_keep = 1
 let g:fern#default_hidden = 1
 let g:fern#default_exclude = '.git$'
 
-nnoremap <localleader>e :Fern . -drawer -toggle<CR>
-let g:localleader_key_map.e = 'explore'
+command! FernExplore Fern . -drawer -toggle
+
+nnoremap <localleader>e :FernExplore<CR>
+let g:localleader_key_map.e = 'Explore'
 
 function! s:fern_init() abort
     setlocal nonumber nobuflisted
@@ -462,15 +487,15 @@ command! Lazygit FloatermNew lazygit
 command! Glow FloatermNew glow
 
 let g:leader_key_map.t = {
-    \ 'name': '+terminal',
-    \ 'b': ['Btm', 'bottom'],
-    \ 'd': ['Gdu', 'disk usage'],
-    \ 'l': ['Lazygit', 'lazygit'],
-    \ 'g': ['Glow', 'glow'],
-    \ 'k': ['FloatermKill', 'kill'],
-    \ 't': ['FloatermNew', 'new'],
-    \ 'n': ['FloatermNext', 'next'],
-    \ 'p': ['FloatermPrev', 'prev'],
+    \ 'name': '+Terminal',
+    \ 'b': ['Btm', 'Bottom'],
+    \ 'd': ['Gdu', 'Disk Usage'],
+    \ 'l': ['Lazygit', 'Lazygit'],
+    \ 'g': ['Glow', 'Glow'],
+    \ 'k': ['FloatermKill', 'Kill Terminal'],
+    \ 't': ['FloatermNew', 'New Terminal'],
+    \ 'n': ['FloatermNext', 'Next Terminal'],
+    \ 'p': ['FloatermPrev', 'Prev Terminal'],
     \ }
 
 
@@ -485,7 +510,7 @@ autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 
 nnoremap <silent> <localleader>z :Goyo<CR>
-let g:localleader_key_map.z = 'zen mode'
+let g:localleader_key_map.z = 'Zen Mode'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -506,14 +531,14 @@ let g:indentLine_bufTypeExclude = ['fern', 'qf', 'help', 'terminal', 'vista', 'v
 " => windows
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:leader_key_map.w = {
-    \ 'name': '+windows',
+    \ 'name': '+Windows',
     \ 'w': ['FzfWindows', 'FzfWindows'],
-    \ 'h': ['<C-W>h', 'window-left'],
-    \ 'j': ['<C-W>j', 'window-blow'],
-    \ 'k': ['<C-W>k', 'window-up'],
-    \ 'l': ['<C-W>l', 'window-right'],
-    \ 's': ['split', 'split-window-blow'],
-    \ 'v': ['vsplit', 'split-window-right'],
+    \ 'h': ['<C-W>h', 'Window Left'],
+    \ 'j': ['<C-W>j', 'Window Blow'],
+    \ 'k': ['<C-W>k', 'Window Up'],
+    \ 'l': ['<C-W>l', 'Window Right'],
+    \ 's': ['split', 'Split Window Blow'],
+    \ 'v': ['vsplit', 'Split Window Right'],
     \ }
 
 
