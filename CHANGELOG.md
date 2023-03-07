@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.6](https://github.com/xuchengpeng/dotfiles/compare/v1.2.5...v1.2.6) (2023-03-07)
+
+
+### Bug Fixes
+
+* indent vim script with 2 spaces ([3d54d46](https://github.com/xuchengpeng/dotfiles/commit/3d54d463c0913b2cc570f75b92906dbd4b833f3f))
+
 ## [1.2.5](https://github.com/xuchengpeng/dotfiles/compare/v1.2.4...v1.2.5) (2023-03-07)
 
 
