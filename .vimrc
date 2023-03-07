@@ -335,7 +335,7 @@ inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
 
-function! s:lsp_document_format() abort
+function! s:document_format() abort
     if &filetype ==# 'lua' && executable('stylua')
         silent !stylua %:p
     else
@@ -343,7 +343,7 @@ function! s:lsp_document_format() abort
     endif
 endfunction
 
-command! DocumentFormat :call s:lsp_document_format()
+command! DocumentFormat :call s:document_format()
 
 let g:leader_key_map.l = {
     \ 'name' : '+lsp',
