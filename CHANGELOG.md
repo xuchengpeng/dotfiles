@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.8](https://github.com/xuchengpeng/dotfiles/compare/v1.2.7...v1.2.8) (2023-03-08)
+
+
+### Bug Fixes
+
+* **terminal:** bind python with &lt;leader&gt;tp ([f42d785](https://github.com/xuchengpeng/dotfiles/commit/f42d785fa10a75c7de9c131b2190a678760323fd))
+
 ## [1.2.7](https://github.com/xuchengpeng/dotfiles/compare/v1.2.6...v1.2.7) (2023-03-08)
 
 
