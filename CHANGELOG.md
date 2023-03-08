@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.7](https://github.com/xuchengpeng/dotfiles/compare/v1.2.6...v1.2.7) (2023-03-08)
+
+
+### Bug Fixes
+
+* **python:** format with black ([8bc5713](https://github.com/xuchengpeng/dotfiles/commit/8bc5713423e23f9f0a90e7bfc4f235ab4a0cd2b5))
+
 ## [1.2.6](https://github.com/xuchengpeng/dotfiles/compare/v1.2.5...v1.2.6) (2023-03-07)
 
 
