@@ -487,6 +487,7 @@ command! Btm FloatermNew btm
 command! Gdu FloatermNew gdu
 command! Lazygit FloatermNew lazygit
 command! Glow FloatermNew glow
+command! Python FloatermNew python
 
 let g:leader_key_map.t = {
   \ 'name': '+Terminal',
@@ -494,10 +495,14 @@ let g:leader_key_map.t = {
   \ 'd': ['Gdu', 'Disk Usage'],
   \ 'l': ['Lazygit', 'Lazygit'],
   \ 'g': ['Glow', 'Glow'],
-  \ 'k': ['FloatermKill', 'Kill Terminal'],
-  \ 't': ['FloatermNew', 'New Terminal'],
-  \ 'n': ['FloatermNext', 'Next Terminal'],
-  \ 'p': ['FloatermPrev', 'Prev Terminal'],
+  \ 'p': ['Python', 'Python'],
+  \ 'f' : {
+    \ 'name': '+Floaterm',
+    \ 'k': ['FloatermKill', 'Kill Terminal'],
+    \ 't': ['FloatermNew', 'New Terminal'],
+    \ 'n': ['FloatermNext', 'Next Terminal'],
+    \ 'p': ['FloatermPrev', 'Prev Terminal'],
+    \ },
   \ }
 
 
