@@ -340,8 +340,10 @@ function! s:document_format() abort
     silent !stylua %:p
   elseif &filetype ==# 'sh' && executable('shfmt')
     silent !shfmt -l -w %:p
+  elseif &filetype ==# 'python' && executable('black')
+    silent !black %:p
   else
-    silent! execute 'LspDocumentFormat'
+    execute 'LspDocumentFormat'
   endif
 endfunction
 
