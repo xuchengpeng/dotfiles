@@ -571,7 +571,7 @@ function! s:draw_startscreen() abort
     \ filetype=startscreen
 
   " Now we can just write to the buffer whatever you want.
-  let padwidth = winwidth(0) / 2 - 30
+  let padwidth = winwidth(0) / 2 - 13
   if padwidth < 3
     let padwidth = 3
   endif
