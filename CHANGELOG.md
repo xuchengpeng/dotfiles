@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.9](https://github.com/xuchengpeng/dotfiles/compare/v1.2.8...v1.2.9) (2023-03-09)
+
+
+### Bug Fixes
+
+* **nvim:** bump 6b551bc ([6c8ae9f](https://github.com/xuchengpeng/dotfiles/commit/6c8ae9f86432d5568ba8d80a5ab24dca476ad865))
+* **startscreen:** centered menus ([62d13ed](https://github.com/xuchengpeng/dotfiles/commit/62d13edb21fd4e3d271add6222e639324e1aa41f))
+
 ## [1.2.8](https://github.com/xuchengpeng/dotfiles/compare/v1.2.7...v1.2.8) (2023-03-08)
 
 
