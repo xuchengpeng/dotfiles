@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.10](https://github.com/xuchengpeng/dotfiles/compare/v1.2.9...v1.2.10) (2023-03-15)
+
+
+### Bug Fixes
+
+* **emacs:** bump v1.8.1 ([16dab69](https://github.com/xuchengpeng/dotfiles/commit/16dab6964e34a076ade4f48e5ca1daebbdab3215))
+* **nvim:** bump v1.7.0 ([cbb45ed](https://github.com/xuchengpeng/dotfiles/commit/cbb45edd57aabc1d8a67a9b13571b0794d2c767f))
+
 ## [1.2.9](https://github.com/xuchengpeng/dotfiles/compare/v1.2.8...v1.2.9) (2023-03-09)
 
 
