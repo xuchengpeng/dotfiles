@@ -344,6 +344,14 @@ if executable('pyright')
     \ })
 endif
 
+if executable('bash-language-server')
+  autocmd User lsp_setup call lsp#register_server({
+    \ 'name': 'bash-language-server',
+    \ 'cmd': {server_info->[&shell, &shellcmdflag, 'bash-language-server start']},
+    \ 'allowlist': ['sh'],
+    \ })
+endif
+
 function! s:on_lsp_buffer_enabled() abort
   setlocal omnifunc=lsp#complete
   setlocal signcolumn=yes
