@@ -170,6 +170,12 @@ set updatetime=200
 
 set completeopt=menu,menuone,noselect
 
+if has('win64') || has('win32')
+  set shell=cmd
+  set shellcmdflag=/C
+  set shellquote= shellxquote=
+endif
+
 autocmd CursorHold,CursorHoldI,FocusGained,BufEnter * checktime
 
 " Return to last edit position when opening files
