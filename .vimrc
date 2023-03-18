@@ -617,9 +617,9 @@ function! s:draw_startscreen() abort
   let lists = [
     \ '> New File               e',
     \ '> Find File              f',
-    \ '> Find Word              g',
-    \ '> Recents                r',
-    \ '> Settings               s',
+    \ '> Recent Files           r',
+    \ '> Find Text              t',
+    \ '> Configuration          c',
     \ '> Update Plugins         u',
     \ '> Quit VIM               q',
     \ ]
@@ -633,9 +633,9 @@ function! s:draw_startscreen() abort
   " When we go to insert mode start a new buffer, and start insert
   nnoremap <buffer><silent> e :enew <bar> startinsert<CR>
   nnoremap <buffer><silent> f :FzfFiles<CR>
-  nnoremap <buffer><silent> g :FzfRg<CR>
   nnoremap <buffer><silent> r :FzfHistory<CR>
-  nnoremap <buffer><silent> s :e $MYVIMRC<CR>
+  nnoremap <buffer><silent> t :FzfRg<CR>
+  nnoremap <buffer><silent> c :e $MYVIMRC<CR>
   nnoremap <buffer><silent> u :PlugUpdate<CR>
   nnoremap <buffer><silent> q :quit<CR>
 endfunction
