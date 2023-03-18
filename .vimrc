@@ -303,6 +303,17 @@ let g:localleader_key_map.m = 'Remove Windows ^M'
 let g:lsp_log_verbose = 0
 let g:lsp_format_sync_timeout = 1000
 
+if executable('vim-language-server')
+  autocmd User lsp_setup call lsp#register_server({
+    \ 'name': 'vim-language-server',
+    \ 'cmd': {server_info->[&shell, &shellcmdflag, 'vim-language-server', '--stdio']},
+    \ 'allowlist': ['vim'],
+    \ 'initialization_options': {
+    \   'vimruntime': $VIMRUNTIME,
+    \   'runtimepath': &rtp,
+    \ }})
+endif
+
 if executable('clangd')
   autocmd User lsp_setup call lsp#register_server({
     \ 'name': 'clangd',
