@@ -330,6 +330,14 @@ if executable('lua-language-server')
     \ })
 endif
 
+if executable('pyright')
+  autocmd User lsp_setup cal lsp#register_server({
+    \ 'name': 'pyright-langserver',
+    \ 'cmd': {server_info->[&shell, &shellcmdflag, 'pyright-langserver', '--stdio']},
+    \ 'allowlist': ['python'],
+    \ })
+endif
+
 function! s:on_lsp_buffer_enabled() abort
   setlocal omnifunc=lsp#complete
   setlocal signcolumn=yes
