@@ -375,6 +375,8 @@ function! s:document_format() abort
     silent !shfmt -l -w %:p
   elseif &filetype ==# 'python' && executable('black')
     silent !black %:p
+  elseif index(['html', 'json', 'jsonc', 'yaml', 'markdown'], &filetype) >= 0 && executable('prettier')
+    silent! execute '!' . &shell . ' ' . &shellcmdflag . ' ' . 'prettier -w %:p'
   else
     execute 'LspDocumentFormat'
   endif
