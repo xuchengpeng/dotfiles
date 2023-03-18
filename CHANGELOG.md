@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.2.11](https://github.com/xuchengpeng/dotfiles/compare/v1.2.10...v1.2.11) (2023-03-18)
+
+
+### Bug Fixes
+
+* **lsp:** configure bash-language-server ([63b1b3e](https://github.com/xuchengpeng/dotfiles/commit/63b1b3e988ea5bb804016a37bfc471d7249bec69))
+* **lsp:** configure pyright-langserver ([64cbc91](https://github.com/xuchengpeng/dotfiles/commit/64cbc9112c60a3ff9252d6e5ec96b5e85fdfdc41))
+* **lsp:** configure vim-language-server ([b4ca846](https://github.com/xuchengpeng/dotfiles/commit/b4ca846753005d260d0dae7885c8d325c67b2432))
+* **lsp:** format html,json,jsonc,yaml,markdown with prettier ([8744ada](https://github.com/xuchengpeng/dotfiles/commit/8744adac9b55f8ffa62e82680a00967bbae3c58f))
+* **nvim:** bump v1.7.5 ([54c865b](https://github.com/xuchengpeng/dotfiles/commit/54c865bdb249aefbba90fb0b9f7cf7faf1ba1a17))
+* **shell:** set cmd as default shell on windows ([33c6173](https://github.com/xuchengpeng/dotfiles/commit/33c617357719ed477b7eaf448267b2b5bc91a063))
+* **startscreen:** configure menus ([1c0ebfc](https://github.com/xuchengpeng/dotfiles/commit/1c0ebfce076d2e3df49429f4bc9be3a031c1c915))
+
 ## [1.2.10](https://github.com/xuchengpeng/dotfiles/compare/v1.2.9...v1.2.10) (2023-03-15)
 
 
