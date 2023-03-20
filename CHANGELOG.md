@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.2.12](https://github.com/xuchengpeng/dotfiles/compare/v1.2.11...v1.2.12) (2023-03-20)
+
+
+### Bug Fixes
+
+* **colorscheme:** add nord theme ([49724a1](https://github.com/xuchengpeng/dotfiles/commit/49724a1a62171defaf426e83e3024c10adbd9cb4))
+* replace lightline with vim-airline ([85e95f8](https://github.com/xuchengpeng/dotfiles/commit/85e95f8804b7271299aa1f7369e2c4afb047dbe7))
+* **startscreen:** bing new file with n ([5f2b85f](https://github.com/xuchengpeng/dotfiles/commit/5f2b85febb02088519f71d58f8fafe357df69460))
+* **which-key:** set highlight on ColorScheme event ([bce6fe1](https://github.com/xuchengpeng/dotfiles/commit/bce6fe1818636b9b7fb4c0aa3485d7600545e180))
+
 ## [1.2.11](https://github.com/xuchengpeng/dotfiles/compare/v1.2.10...v1.2.11) (2023-03-18)
 
 
