@@ -234,6 +234,7 @@ Plug 'LunarWatcher/auto-pairs'
 Plug 'lambdalisue/fern.vim', { 'on': 'Fern' }
 Plug 'matze/vim-move'
 Plug 'mhinz/vim-grepper', { 'on': ['Grepper', '<plug>(GrepperOperator)']  }
+Plug 'nordtheme/vim', { 'as': 'nord.vim' }
 Plug 'RRethy/vim-illuminate'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
@@ -248,14 +249,14 @@ call plug#end()
 " => Colorscheme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set background=dark
-silent! colorscheme onedark
+silent! colorscheme nord
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => lightline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:lightline = {
-  \ 'colorscheme': 'onedark',
+  \ 'colorscheme': 'nord',
   \ 'active': {
   \   'left': [ [ 'mode', 'paste' ],
   \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
