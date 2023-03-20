@@ -625,8 +625,8 @@ function! s:draw_startscreen() abort
     call append('$', leftpad . line)
   endfor
   let lists = [
-    \ '> New File               e',
     \ '> Find File              f',
+    \ '> New File               n',
     \ '> Recent Files           r',
     \ '> Find Text              t',
     \ '> Configuration          c',
@@ -641,8 +641,8 @@ function! s:draw_startscreen() abort
   setlocal nomodifiable nomodified
 
   " When we go to insert mode start a new buffer, and start insert
-  nnoremap <buffer><silent> e :enew <bar> startinsert<CR>
   nnoremap <buffer><silent> f :FzfFiles<CR>
+  nnoremap <buffer><silent> n :enew<CR>
   nnoremap <buffer><silent> r :FzfHistory<CR>
   nnoremap <buffer><silent> t :FzfRg<CR>
   nnoremap <buffer><silent> c :e $MYVIMRC<CR>
