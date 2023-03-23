@@ -328,6 +328,7 @@ if executable('lua-language-server')
     \ 'name': 'lua-language-server',
     \ 'cmd': {server_info->[&shell, &shellcmdflag, 'lua-language-server']},
     \ 'allowlist': ['lua'],
+    \ 'workspace_config': { 'Lua': { 'diagnostics': { 'enable': v:true, 'globals': [ 'vim' ] } } },
     \ })
 endif
 
