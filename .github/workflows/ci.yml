@@ -18,14 +18,14 @@ jobs:
       - name: Install Neovim
         shell: bash
         run: |
-          wget -q https://github.com/neovim/neovim/releases/download/${{ matrix.nvim-version }}/nvim-linux64.deb -O /tmp/nvim.deb
-          sudo dpkg -i /tmp/nvim.deb
+          wget -q https://github.com/neovim/neovim/releases/download/${{ matrix.nvim-version }}/nvim-linux64.tar.gz -O /tmp/nvim-linux64.tar.gz
+          sudo tar zxf /tmp/nvim-linux64.tar.gz -C /tmp/
       - name: Run Neovim
         run: |
           sudo mkdir -p ~/.config/nvim
           sudo cp -rf nvim/* ~/.config/nvim/
-          sudo nvim --version
-          sudo nvim --headless -c "checkhealth" -c "quit" -c "quit"
+          sudo /tmp/nvim-linux64/bin/nvim --version
+          sudo /tmp/nvim-linux64/bin/nvim --headless -c "checkhealth" -c "quit" -c "quit"
   release:
     name: release
     if: ${{ github.ref == 'refs/heads/main' }}
