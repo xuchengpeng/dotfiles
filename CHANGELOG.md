@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.2.14](https://github.com/xuchengpeng/dotfiles/compare/v1.2.13...v1.2.14) (2023-04-07)
+
+
+### Bug Fixes
+
+* **ci:** update install package ([6e7314e](https://github.com/xuchengpeng/dotfiles/commit/6e7314e09de5e8d1dd92f3d43480508e4ebd650a))
+* **lua-ls:** configure workspace ([21e9b6e](https://github.com/xuchengpeng/dotfiles/commit/21e9b6e7261a2b11fda2f344cff57ac96fd75063))
+* **nvim:** bump v1.8.2 ([9f4bad4](https://github.com/xuchengpeng/dotfiles/commit/9f4bad47c2222f0ab744e53ca3129a4d3196b99b))
+
 ## [1.2.13](https://github.com/xuchengpeng/dotfiles/compare/v1.2.12...v1.2.13) (2023-03-22)
 
 
