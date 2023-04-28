@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.15](https://github.com/xuchengpeng/dotfiles/compare/v1.2.14...v1.2.15) (2023-04-28)
+
+
+### Bug Fixes
+
+* **nvim:** bump v1.8.10 ([29741d8](https://github.com/xuchengpeng/dotfiles/commit/29741d874cb7aa69af877b32bbd78c4b07502c8d))
+
 ## [1.2.14](https://github.com/xuchengpeng/dotfiles/compare/v1.2.13...v1.2.14) (2023-04-07)
 
 
