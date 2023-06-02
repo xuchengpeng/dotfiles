@@ -251,6 +251,11 @@ call plug#end()
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 0
 let g:airline_symbols_ascii = 1
+let g:airline_exclude_filetypes = ['startscreen']
+let g:airline_filetype_overrides = {
+  \ 'fern': ['Explorer', ''],
+  \ 'vista': ['Outline', ''],
+  \ }
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -402,6 +407,7 @@ let g:leader_key_map.l = {
 " => Vista
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:vista_default_executive = 'ctags'
+let g:vista_disable_statusline = 1
 
 let g:leader_key_map.c = {
   \ 'name': '+Coding',
