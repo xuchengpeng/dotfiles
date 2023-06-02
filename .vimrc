@@ -399,10 +399,7 @@ let g:leader_key_map.l = {
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vista
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:vista_executive_for = {
-  \ 'cpp': 'vim_lsp',
-  \ 'lua': 'vim_lsp',
-  \ }
+let g:vista_default_executive = 'ctags'
 
 let g:leader_key_map.c = {
   \ 'name': '+Coding',
