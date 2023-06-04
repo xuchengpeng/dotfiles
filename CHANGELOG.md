@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.2.16](https://github.com/xuchengpeng/dotfiles/compare/v1.2.15...v1.2.16) (2023-06-04)
+
+
+### Bug Fixes
+
+* **airline:** overrides fern,vista ([0b51712](https://github.com/xuchengpeng/dotfiles/commit/0b51712fd3d6b7cc7d73a366baaa1ce0e3dc13b8))
+* **airline:** use plain ascii symbols ([2ed9bd2](https://github.com/xuchengpeng/dotfiles/commit/2ed9bd27e4a894eeca124260283c968d71da4ae5))
+* bind nohlsearch with &lt;leader&gt;h ([9579997](https://github.com/xuchengpeng/dotfiles/commit/9579997853dd107efb34ecd77393133201211d6a))
+* **emacs:** bump v2.0.9 ([7faee44](https://github.com/xuchengpeng/dotfiles/commit/7faee44f179a5d7ea94fae1f5304a5fcb1cfa1d3))
+* **lightline:** replace airline ([85cc3c6](https://github.com/xuchengpeng/dotfiles/commit/85cc3c6343a7319df68a933a355b74c398cb0386))
+* **nvim:** bump v1.8.14 ([0a58d1c](https://github.com/xuchengpeng/dotfiles/commit/0a58d1c9c89d5d40238d84d1dd877e5b3c203fd8))
+* **vista:** use default executive ([b53126e](https://github.com/xuchengpeng/dotfiles/commit/b53126ed2a66a8009f93ce4391d502a3e3e780e3))
+
 ## [1.2.15](https://github.com/xuchengpeng/dotfiles/compare/v1.2.14...v1.2.15) (2023-04-28)
 
 
