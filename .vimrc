@@ -298,11 +298,8 @@ let g:leader_key_map.b = {
   \ 'p': ['bprevious', 'Previous Buffer'],
   \ }
 
-nnoremap <silent> <localleader><cr> :nohlsearch<cr>
-
-" Remove the Windows ^M - when the encodings gets messed up
-nnoremap <silent> <localleader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
-let g:localleader_key_map.m = 'Remove Windows ^M'
+nnoremap <silent> <leader>h :nohlsearch<cr>
+let g:leader_key_map.h = 'No Highlight Seach'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -496,9 +493,6 @@ let g:fern#default_exclude = '.git$'
 
 command! FernExplore Fern . -drawer -toggle
 
-nnoremap <localleader>e :FernExplore<CR>
-let g:localleader_key_map.e = 'Explore'
-
 function! s:fern_init() abort
   setlocal nonumber nobuflisted
   nnoremap <buffer> <silent> q :quit<CR>
@@ -552,8 +546,8 @@ let g:limelight_conceal_guifg = 'Gray'
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 
-nnoremap <silent> <localleader>z :Goyo<CR>
-let g:localleader_key_map.z = 'Zen Mode'
+nnoremap <silent> <leader>z :Goyo<CR>
+let g:leader_key_map.z = 'Zen Mode'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
