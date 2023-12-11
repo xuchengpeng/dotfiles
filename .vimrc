@@ -170,12 +170,6 @@ set updatetime=200
 
 set completeopt=menu,menuone,noselect
 
-if has('win64') || has('win32')
-  set shell=cmd
-  set shellcmdflag=/C
-  set shellquote= shellxquote=
-endif
-
 autocmd CursorHold,CursorHoldI,FocusGained,BufEnter * checktime
 
 " Return to last edit position when opening files
@@ -215,61 +209,60 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
   \| endif
 
 call plug#begin(s:plug_dir)
-Plug 'prabirshrestha/vim-lsp'
+Plug 'catppuccin/vim', { 'as': 'catppuccin' }
+Plug 'mhinz/vim-startify'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/vim-lsp'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
-Plug 'airblade/vim-gitgutter'
-Plug 'AndrewRadev/splitjoin.vim', { 'on': ['SplitjoinJoin', 'SplitjoinSplit'] }
-Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
-Plug 'junegunn/limelight.vim', { 'on': 'Limelight' }
 Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
-Plug 'liuchengxu/vista.vim'
-Plug 'LunarWatcher/auto-pairs'
-Plug 'lambdalisue/fern.vim', { 'on': 'Fern' }
-Plug 'matze/vim-move'
 Plug 'mhinz/vim-grepper', { 'on': ['Grepper', '<plug>(GrepperOperator)']  }
-Plug 'nordtheme/vim', { 'as': 'nord.vim' }
 Plug 'RRethy/vim-illuminate'
-Plug 'tpope/vim-commentary'
+Plug 'preservim/nerdtree'
+Plug 'preservim/tagbar'
+Plug 'preservim/vim-indent-guides'
+Plug 'preservim/nerdcommenter'
+Plug 'AndrewRadev/splitjoin.vim', { 'on': ['SplitjoinJoin', 'SplitjoinSplit'] }
+Plug 'matze/vim-move'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
-Plug 'itchyny/lightline.vim'
-Plug 'voldikss/vim-floaterm', { 'on': ['FloatermToggle', 'FloatermNew', 'FloatermKill', 'FloatermNext', 'FloatermPrev'] }
-Plug 'Yggdroot/indentLine'
 call plug#end()
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => lightline
+" => Colorscheme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:lightline = {
-  \ 'colorscheme': 'nord',
-  \ }
+set background=dark
+silent! colorscheme catppuccin_mocha
 
-augroup LightlineColorscheme
-  autocmd!
-  autocmd ColorScheme * call s:lightline_update()
-augroup END
-function! s:lightline_update()
-  if !exists('g:loaded_lightline')
-    return
-  endif
-  try
-    if g:colors_name =~# 'nord\|onedark'
-      let g:lightline.colorscheme = substitute(substitute(g:colors_name, '-', '_', 'g'), '256.*', '', '')
-      call lightline#init()
-      call lightline#colorscheme()
-      call lightline#update()
-    endif
-  catch
-  endtry
-endfunction
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-startify
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:startify_custom_header = [
+  \ '  ██╗   ██╗██╗███╗   ███╗ ',
+  \ '  ██║   ██║██║████╗ ████║ ',
+  \ '  ██║   ██║██║██╔████╔██║ ',
+  \ '  ╚██╗ ██╔╝██║██║╚██╔╝██║ ',
+  \ '   ╚████╔╝ ██║██║ ╚═╝ ██║ ',
+  \ '    ╚═══╝  ╚═╝╚═╝     ╚═╝ ',
+  \ ]
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-airline
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+
+let g:airline_section_z = airline#section#create(['%l:%c %p%%'])
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => WhichKey
@@ -301,69 +294,16 @@ augroup which_key_install
   autocmd User vim-which-key call which_key#register(',', 'g:localleader_key_map')
 augroup END
 
-let g:leader_key_map.b = {
-  \ 'name' : '+Buffer',
-  \ 'b': ['buffers', 'Buffers'],
-  \ 'd': ['bdelete', 'Delete Buffer'],
-  \ 'f': ['bfirst', 'First Buffer'],
-  \ 'l': ['blast', 'Last Buffer'],
-  \ 'n': ['bnext', 'Next Buffer'],
-  \ 'p': ['bprevious', 'Previous Buffer'],
-  \ }
-
-nnoremap <silent> <leader>h :nohlsearch<cr>
-let g:leader_key_map.h = 'No Highlight Seach'
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => LSP
+" => auto complete
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
+
 let g:lsp_log_verbose = 0
 let g:lsp_format_sync_timeout = 1000
-
-if executable('vim-language-server')
-  autocmd User lsp_setup call lsp#register_server({
-    \ 'name': 'vim-language-server',
-    \ 'cmd': {server_info->[&shell, &shellcmdflag, 'vim-language-server', '--stdio']},
-    \ 'allowlist': ['vim'],
-    \ 'initialization_options': {
-    \   'vimruntime': $VIMRUNTIME,
-    \   'runtimepath': &rtp,
-    \ }})
-endif
-
-if executable('clangd')
-  autocmd User lsp_setup call lsp#register_server({
-    \ 'name': 'clangd',
-    \ 'cmd': {server_info->['clangd', '-background-index']},
-    \ 'allowlist': ['c', 'cpp', 'objc', 'objcpp'],
-    \ })
-endif
-
-if executable('lua-language-server')
-  autocmd User lsp_setup call lsp#register_server({
-    \ 'name': 'lua-language-server',
-    \ 'cmd': {server_info->[&shell, &shellcmdflag, 'lua-language-server']},
-    \ 'allowlist': ['lua'],
-    \ 'workspace_config': { 'Lua': { 'diagnostics': { 'enable': v:true, 'globals': [ 'vim' ] } } },
-    \ })
-endif
-
-if executable('pyright')
-  autocmd User lsp_setup cal lsp#register_server({
-    \ 'name': 'pyright-langserver',
-    \ 'cmd': {server_info->[&shell, &shellcmdflag, 'pyright-langserver', '--stdio']},
-    \ 'allowlist': ['python'],
-    \ })
-endif
-
-if executable('bash-language-server')
-  autocmd User lsp_setup call lsp#register_server({
-    \ 'name': 'bash-language-server',
-    \ 'cmd': {server_info->[&shell, &shellcmdflag, 'bash-language-server start']},
-    \ 'allowlist': ['sh'],
-    \ })
-endif
 
 function! s:on_lsp_buffer_enabled() abort
   setlocal omnifunc=lsp#complete
@@ -376,57 +316,6 @@ augroup lsp_install
   autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
 
-" Tab completion
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
-
-function! s:document_format() abort
-  if &filetype ==# 'lua' && executable('stylua')
-    silent !stylua %:p
-  elseif &filetype ==# 'sh' && executable('shfmt')
-    silent !shfmt -l -w %:p
-  elseif &filetype ==# 'python' && executable('black')
-    silent !black %:p
-  elseif index(['html', 'json', 'jsonc', 'yaml', 'markdown'], &filetype) >= 0 && executable('prettier')
-    silent! execute '!' . &shell . ' ' . &shellcmdflag . ' ' . 'prettier -w %:p'
-  else
-    execute 'LspDocumentFormat'
-  endif
-endfunction
-
-command! DocumentFormat :call s:document_format()
-
-let g:leader_key_map.l = {
-  \ 'name' : '+Lsp',
-  \ 'd': ['<plug>(lsp-definition)', 'Goto Definition'],
-  \ 'f': ['DocumentFormat', 'Format'],
-  \ 's': ['<plug>(lsp-document-symbol-search)', 'Document Symbol'],
-  \ 'S': ['<plug>(lsp-workspace-symbol-search)', 'Workspace Symbol'],
-  \ 'r': ['<plug>(lsp-references)', 'References'],
-  \ 'R': ['<plug>(lsp-rename)', 'Rename'],
-  \ 'h': ['<plug>(lsp-hover)', 'Hover'],
-  \ 'i': ['<plug>(lsp-implementation)', 'Goto Implementation'],
-  \ 't': ['<plug>(lsp-type-definition)', 'Goto Type Definition'],
-  \ 'n': ['<plug>(lsp-next-diagnostic)', 'Next Diagnostic'],
-  \ 'p': ['<plug>(lsp-previous-diagnostic)', 'Prev Diagnostic'],
-  \ }
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Vista
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:vista_default_executive = 'ctags'
-let g:vista_disable_statusline = 1
-
-let g:leader_key_map.c = {
-  \ 'name': '+Coding',
-  \ 'e': ['FernExplore', 'Explore'],
-  \ 'j': ['SplitjoinJoin', 'Join'],
-  \ 's': ['SplitjoinSplit', 'Split'],
-  \ 'o': ['Vista', 'Outline'],
-  \ }
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => fzf
@@ -434,52 +323,10 @@ let g:leader_key_map.c = {
 let g:fzf_layout = { 'down': '40%' }
 let g:fzf_command_prefix = 'Fzf'
 
-let g:fzf_colors = {
-  \ 'fg':      ['fg', 'Normal'],
-  \ 'bg':      ['bg', 'Normal'],
-  \ 'hl':      ['fg', 'Comment'],
-  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-  \ 'hl+':     ['fg', 'Statement'],
-  \ 'info':    ['fg', 'PreProc'],
-  \ 'border':  ['fg', 'Ignore'],
-  \ 'prompt':  ['fg', 'Conditional'],
-  \ 'pointer': ['fg', 'Exception'],
-  \ 'marker':  ['fg', 'Keyword'],
-  \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment'],
-  \ }
-
-let g:leader_key_map.f = {
-  \ 'name': '+Fzf',
-  \ 'b': ['FzfBuffers', 'Buffers'],
-  \ 'f': ['FzfFiles', 'Find Files'],
-  \ 'g': ['FzfRg', 'Grep'],
-  \ 'r': ['FzfHistory', 'Recent Files'],
-  \ 't': ['FzfBTags', 'Tags'],
-  \ }
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => git
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:gitgutter_map_keys = 0
-
-autocmd FileType diff,git,fugitiveblame nnoremap <buffer> <silent> q :quit<CR>
-
-command! GitBlame Git blame
-command! GitDiff Git diff
-
-let g:leader_key_map.g = {
-  \ 'name': '+Git',
-  \ 'b': ['GitBlame', 'Blame'],
-  \ 'd': ['GitDiff', 'Diff'],
-  \ 'P': ['GitGutterPreviewHunk', 'Preview Hunk'],
-  \ 'p': ['GitGutterPrevHunk', 'Prev Hunk'],
-  \ 'n': ['GitGutterNextHunk', 'Next Hunk'],
-  \ 's': ['GitGutterStageHunk', 'Stage Hunk'],
-  \ 'u': ['GitGutterUndoHunk', 'Undo Hunk'],
-  \ }
+if has('win64') || has('win32')
+  set shell=cmd
+  set shellcmdflag=/C
+endif
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -493,96 +340,81 @@ let g:grepper = {
   \   'escape':     '\+*^$()[]',
   \ }}
 
-nnoremap <silent> <localleader>g :Grepper<CR>
-let g:localleader_key_map.g = 'Grep'
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => fern
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:fern#drawer_keep = 1
-let g:fern#default_hidden = 1
-let g:fern#default_exclude = '.git$'
-
-command! FernExplore Fern . -drawer -toggle
-
-function! s:fern_init() abort
-  setlocal nonumber nobuflisted
-  nnoremap <buffer> <silent> q :quit<CR>
-endfunction
-
-augroup fern_settings
-  autocmd!
-  autocmd FileType fern call s:fern_init()
-augroup END
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => floaterm
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:floaterm_width = 0.8
-let g:floaterm_height = 0.8
-
-hi Floaterm guibg=black
-let g:floaterm_keymap_toggle = '<F12>'
-
-command! Btm FloatermNew btm
-command! Gdu FloatermNew gdu
-command! Lazygit FloatermNew lazygit
-command! Glow FloatermNew glow
-command! Python FloatermNew python
-
-let g:leader_key_map.t = {
-  \ 'name': '+Terminal',
-  \ 'b': ['Btm', 'Bottom'],
-  \ 'd': ['Gdu', 'Disk Usage'],
-  \ 'l': ['Lazygit', 'Lazygit'],
-  \ 'g': ['Glow', 'Glow'],
-  \ 'p': ['Python', 'Python'],
-  \ 'f' : {
-    \ 'name': '+Floaterm',
-    \ 'k': ['FloatermKill', 'Kill Terminal'],
-    \ 't': ['FloatermNew', 'New Terminal'],
-    \ 'n': ['FloatermNext', 'Next Terminal'],
-    \ 'p': ['FloatermPrev', 'Prev Terminal'],
-    \ },
-  \ }
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => zen mode
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:goyo_width = '120'
-let g:goyo_height = '85%'
-let g:limelight_conceal_ctermfg = 'Gray'
-let g:limelight_conceal_guifg = 'Gray'
-autocmd! User GoyoEnter Limelight
-autocmd! User GoyoLeave Limelight!
-
-nnoremap <silent> <leader>z :Goyo<CR>
-let g:leader_key_map.z = 'Zen Mode'
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => illuminate
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:Illuminate_delay = 200
-let g:Illuminate_ftblacklist = ['fern', 'qf', 'vista', 'vista_kind', 'vim-plug', 'startscreen']
+let g:Illuminate_ftblacklist = ['nerdtree', 'qf', 'startify', 'tagbar', 'vim-plug']
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => indentLine
+" => vim-indent-guides
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:indentLine_fileTypeExclude = ['startscreen']
-let g:indentLine_bufTypeExclude = ['fern', 'qf', 'help', 'terminal', 'vista', 'vista_kind']
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'qf', 'startify', 'tagbar']
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => windows
+" => tagbar
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:tagbar_autofocus = 1
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => nerdcommenter
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:NERDCreateDefaultMappings = 0
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Keybinds
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:leader_key_map.b = {
+  \ 'name' : '+Buffer',
+  \ 'b': ['buffers', 'Buffers'],
+  \ 'd': ['bdelete', 'Delete Buffer'],
+  \ 'f': ['bfirst', 'First Buffer'],
+  \ 'l': ['blast', 'Last Buffer'],
+  \ 'n': ['bnext', 'Next Buffer'],
+  \ 'p': ['bprevious', 'Previous Buffer'],
+  \ }
+
+let g:leader_key_map.c = {
+  \ 'name': '+Coding',
+  \ 'e': ['NERDTreeToggle', 'Explore'],
+  \ 'j': ['SplitjoinJoin', 'Join'],
+  \ 's': ['SplitjoinSplit', 'Split'],
+  \ 't': ['TagbarToggle', 'Tags'],
+  \ }
+
+let g:leader_key_map.f = {
+  \ 'name': '+Fzf',
+  \ 'b': ['FzfBuffers', 'Buffers'],
+  \ 'f': ['FzfFiles', 'Find Files'],
+  \ 'g': ['FzfRg', 'Grep'],
+  \ 'r': ['FzfHistory', 'Recent Files'],
+  \ 't': ['FzfBTags', 'Tags'],
+  \ 'w': ['FzfWindows', 'Windows'],
+  \ }
+
+let g:leader_key_map.l = {
+  \ 'name' : '+Lsp',
+  \ 'd': ['<plug>(lsp-definition)', 'Goto Definition'],
+  \ 'f': ['<plug>(lsp-document-format)', 'Format'],
+  \ 's': ['<plug>(lsp-document-symbol-search)', 'Document Symbol'],
+  \ 'S': ['<plug>(lsp-workspace-symbol-search)', 'Workspace Symbol'],
+  \ 'r': ['<plug>(lsp-references)', 'References'],
+  \ 'R': ['<plug>(lsp-rename)', 'Rename'],
+  \ 'h': ['<plug>(lsp-hover)', 'Hover'],
+  \ 'i': ['<plug>(lsp-implementation)', 'Goto Implementation'],
+  \ 't': ['<plug>(lsp-type-definition)', 'Goto Type Definition'],
+  \ 'n': ['<plug>(lsp-next-diagnostic)', 'Next Diagnostic'],
+  \ 'p': ['<plug>(lsp-previous-diagnostic)', 'Prev Diagnostic'],
+  \ }
+
 let g:leader_key_map.w = {
   \ 'name': '+Windows',
-  \ 'w': ['FzfWindows', 'FzfWindows'],
   \ 'h': ['<C-W>h', 'Window Left'],
   \ 'j': ['<C-W>j', 'Window Blow'],
   \ 'k': ['<C-W>k', 'Window Up'],
@@ -591,104 +423,19 @@ let g:leader_key_map.w = {
   \ 'v': ['vsplit', 'Split Window Right'],
   \ }
 
+let g:localleader_key_map.c = {
+  \ 'name': '+Commenter',
+  \ 'c': ['<plug>NERDCommenterComment', 'Comment'],
+  \ 'i': ['<plug>NERDCommenterInvert', 'Invert'],
+  \ 'm': ['<plug>NERDCommenterMinimal', 'Minimal'],
+  \ 'n': ['<plug>NERDCommenterNested', 'Nested'],
+  \ 's': ['<plug>NERDCommenterSexy', 'Sexy'],
+  \ 't': ['<plug>NERDCommenterToggle', 'Toggle'],
+  \ 'u': ['<plug>NERDCommenterUncomment', 'Uncomment'],
+  \ }
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => startup screen
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! s:draw_startscreen() abort
-  " Start a new buffer...
-  enew
+nnoremap <silent> <localleader>g :Grepper<CR>
+let g:localleader_key_map.g = 'Grep'
 
-  " ...and set some options for it
-  setlocal
-    \ bufhidden=wipe
-    \ buftype=nofile
-    \ nobuflisted
-    \ nocursorcolumn
-    \ nocursorline
-    \ nolist
-    \ nonumber
-    \ noswapfile
-    \ norelativenumber
-    \ statusline=%y
-    \ filetype=startscreen
-
-  " Now we can just write to the buffer whatever you want.
-  let padwidth = winwidth(0) / 2 - 13
-  if padwidth < 3
-    let padwidth = 3
-  endif
-  let leftpad = repeat(' ', padwidth)
-  let header = [
-    \ '                          ',
-    \ '  ██╗   ██╗██╗███╗   ███╗ ',
-    \ '  ██║   ██║██║████╗ ████║ ',
-    \ '  ██║   ██║██║██╔████╔██║ ',
-    \ '  ╚██╗ ██╔╝██║██║╚██╔╝██║ ',
-    \ '   ╚████╔╝ ██║██║ ╚═╝ ██║ ',
-    \ '    ╚═══╝  ╚═╝╚═╝     ╚═╝ ',
-    \ '                          ',
-    \ ]
-  for line in header
-    call append('$', leftpad . line)
-  endfor
-  let lists = [
-    \ '> Find File              f',
-    \ '> New File               n',
-    \ '> Recent Files           r',
-    \ '> Find Text              t',
-    \ '> Configuration          c',
-    \ '> Update Plugins         u',
-    \ '> Quit VIM               q',
-    \ ]
-  for line in lists
-    call append('$', leftpad . line)
-  endfor
-
-  " No modifications to this buffer
-  setlocal nomodifiable nomodified
-
-  " When we go to insert mode start a new buffer, and start insert
-  nnoremap <buffer><silent> f :FzfFiles<CR>
-  nnoremap <buffer><silent> n :enew<CR>
-  nnoremap <buffer><silent> r :FzfHistory<CR>
-  nnoremap <buffer><silent> t :FzfRg<CR>
-  nnoremap <buffer><silent> c :e $MYVIMRC<CR>
-  nnoremap <buffer><silent> u :PlugUpdate<CR>
-  nnoremap <buffer><silent> q :quit<CR>
-endfunction
-
-function! s:redraw_startscreen() abort
-  if &filetype ==# 'startscreen'
-    call s:draw_startscreen()
-  endif
-endfunction
-
-function! s:startscreen() abort
-  " Don't run if:
-  " - there are commandline arguments;
-  " - the buffer isn't empty (e.g. cmd | vi -);
-  " - we're not invoked as vim or gvim;
-  " - we're starting in insert mode.
-  if argc() || line2byte('$') != -1 || v:progname !~? '^[-gmnq]\=vim\=x\=\%[\.exe]$' || &insertmode
-    return
-  endif
-
-  call s:draw_startscreen()
-endfunction
-
-augroup startscreen
-  autocmd!
-  autocmd VimEnter * call s:startscreen()
-  autocmd VimResized * call s:redraw_startscreen()
-augroup END
-
-command! StartScreen :call s:draw_startscreen()
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Colorscheme
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set background=dark
-silent! colorscheme nord
-
+nnoremap <silent> <localleader>h :nohlsearch<cr>
+let g:localleader_key_map.h = 'No Highlight Seach'
