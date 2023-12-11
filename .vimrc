@@ -257,11 +257,11 @@ let g:startify_custom_header = [
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-airline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:airline_powerline_fonts = 0
+let g:airline_symbols_ascii = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
-
-let g:airline_section_z = airline#section#create(['%l:%c %p%%'])
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
