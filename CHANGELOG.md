@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.2.17](https://github.com/xuchengpeng/dotfiles/compare/v1.2.16...v1.2.17) (2023-12-11)
+
+
+### Bug Fixes
+
+* **airline:** use plain ascii symbols ([7c4159a](https://github.com/xuchengpeng/dotfiles/commit/7c4159af57df3f2fd24f072240ee42677cdb73d8))
+* **ci:** upgrade actions ([44b175f](https://github.com/xuchengpeng/dotfiles/commit/44b175fa25af36bd46f933f75f46ce4c8d362d96))
+* **emacs:** bump v2.0.11 ([279127d](https://github.com/xuchengpeng/dotfiles/commit/279127dbeb658c9e04aeb6a74b08507aabf05525))
+* **nvim:** bump v1.8.19 ([1813bc6](https://github.com/xuchengpeng/dotfiles/commit/1813bc65508419d82da566497e47f6a0d9adc32e))
+* **vim:** refactoring ([23f678c](https://github.com/xuchengpeng/dotfiles/commit/23f678c6c9db623a89cc894a4334b166e9f2e3ca))
+
 ## [1.2.16](https://github.com/xuchengpeng/dotfiles/compare/v1.2.15...v1.2.16) (2023-06-04)
 
 
