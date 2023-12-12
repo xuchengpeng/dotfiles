@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.2.18](https://github.com/xuchengpeng/dotfiles/compare/v1.2.17...v1.2.18) (2023-12-12)
+
+
+### Bug Fixes
+
+* **checktime:** remove checktime as autoread is setted ([31b819e](https://github.com/xuchengpeng/dotfiles/commit/31b819ea5a3a2bbd3202f484435e76b188407343))
+* **indent-guides:** don't set default mapping ([13dcf78](https://github.com/xuchengpeng/dotfiles/commit/13dcf78e3d4e1cee96a144dcba13caed223d41ae))
+* **startify:** custom header ([bdec660](https://github.com/xuchengpeng/dotfiles/commit/bdec66028973d325b290a4365df02eea42a21654))
+* **vim-indent-guides:** disable by default ([496d188](https://github.com/xuchengpeng/dotfiles/commit/496d18895a3ac746df4671c5fcfd8c331eb33b61))
+* **vim-lsp:** register servers ([0a894d6](https://github.com/xuchengpeng/dotfiles/commit/0a894d680312e4a5be91d17507e7217b4789bc37))
+* **vim-which-key:** don't set highlight ([df383eb](https://github.com/xuchengpeng/dotfiles/commit/df383ebafbed3b2d913b125b0fceb0285b401b14))
+* **vim:** backup/swap/info/undo settings ([62d03ff](https://github.com/xuchengpeng/dotfiles/commit/62d03ffff5cd81d864799b3b426388c4afc19ddf))
+
 ## [1.2.17](https://github.com/xuchengpeng/dotfiles/compare/v1.2.16...v1.2.17) (2023-12-11)
 
 
