@@ -114,11 +114,16 @@ set termencoding=utf-8
 " Use Unix as the standard file type
 set fileformats=unix,mac,dos
 
-" Turn backup off, since most stuff is in SVN, git etc. anyway...
+" backup/swap/info/undo settings
 set nobackup
 set nowritebackup
-set nowb
 set noswapfile
+set noundofile
+set backupdir=$HOME/.vim/files/backup/
+set directory=$HOME/.vim/files/swap/
+set undodir=$HOME/.vim/files/undo
+set viewdir=$HOME/.vim/files/view
+set viminfo='100,n$HOME/.vim/files/info/viminfo
 
 " Use spaces instead of tabs
 set expandtab
