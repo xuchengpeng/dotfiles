@@ -175,8 +175,6 @@ set updatetime=200
 
 set completeopt=menu,menuone,noselect
 
-autocmd CursorHold,CursorHoldI,FocusGained,BufEnter * checktime
-
 " Return to last edit position when opening files
 autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
