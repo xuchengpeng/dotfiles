@@ -5,7 +5,7 @@ on:
   pull_request:
 
 jobs:
-  tests:
+  neovim-tests:
     strategy:
       matrix:
         os: [ubuntu-latest]
@@ -26,18 +26,31 @@ jobs:
           sudo cp -rf nvim/* ~/.config/nvim/
           sudo /tmp/nvim-linux64/bin/nvim --version
           sudo /tmp/nvim-linux64/bin/nvim --headless -c "checkhealth" -c "quit" -c "quit"
+  vim-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: 'recursive'
+      - name: Install vim
+        shell: bash
+        run: sudo apt-get install vim
+      - name: Run vim
+        run: |
+          sudo cp -f .vimrc ~/
+          sudo vim --version
   release:
     name: release
     if: ${{ github.ref == 'refs/heads/main' }}
     needs:
-      - tests
+      - neovim-tests
+      - vim-tests
     runs-on: ubuntu-latest
     steps:
       - uses: google-github-actions/release-please-action@v4
         id: release
         with:
           release-type: simple
-          package-name: dotfiles
       - uses: actions/checkout@v4
       - name: tag stable versions
         if: ${{ steps.release.outputs.release_created }}
