@@ -247,6 +247,7 @@ silent! colorscheme catppuccin_mocha
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-startify
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:startify_files_number = 8
 let g:startify_custom_header = [
   \ '  ██╗   ██╗ ██╗ ███╗   ███╗ ',
   \ '  ██║   ██║ ██║ ████╗ ████║ ',
@@ -254,6 +255,9 @@ let g:startify_custom_header = [
   \ '  ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║ ',
   \ '   ╚████╔╝  ██║ ██║ ╚═╝ ██║ ',
   \ '    ╚═══╝   ╚═╝ ╚═╝     ╚═╝ ',
+  \ ]
+let g:startify_bookmarks = [
+  \ { 'c': '~/.vimrc' },
   \ ]
 
 
