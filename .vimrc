@@ -273,14 +273,6 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:mapleader = "\<Space>"
 let g:maplocalleader = ","
 
-function! s:set_which_key_highlight() abort
-  highlight default link WhichKey          Operator
-  highlight default link WhichKeySeperator Keyword
-  highlight default link WhichKeyGroup     Identifier
-  highlight default link WhichKeyDesc      Function
-  highlight default link WhichKeyFloating  Pmenu
-endfunction
-
 nnoremap <silent> <leader> :<c-u>WhichKey '<Space>'<CR>
 vnoremap <silent> <leader> :<c-u>WhichKeyVisual '<Space>'<CR>
 
@@ -292,7 +284,6 @@ let g:localleader_key_map = {}
 
 augroup which_key_install
   autocmd!
-  autocmd ColorScheme * call s:set_which_key_highlight()
   autocmd User vim-which-key call which_key#register('<Space>', 'g:leader_key_map')
   autocmd User vim-which-key call which_key#register(',', 'g:localleader_key_map')
 augroup END
