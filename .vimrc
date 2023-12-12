@@ -310,6 +310,32 @@ augroup lsp_install
   autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
 
+if executable('vim-language-server')
+  autocmd User lsp_setup call lsp#register_server({
+    \ 'name': 'vim-language-server',
+    \ 'cmd': {server_info->[&shell, &shellcmdflag, 'vim-language-server', '--stdio']},
+    \ 'whitelist': ['vim'],
+    \ 'initialization_options': {
+    \   'vimruntime': $VIMRUNTIME,
+    \   'runtimepath': &rtp,
+    \ }})
+endif
+
+if executable('pyright')
+  autocmd User lsp_setup cal lsp#register_server({
+    \ 'name': 'pyright-langserver',
+    \ 'cmd': {server_info->[&shell, &shellcmdflag, 'pyright-langserver', '--stdio']},
+    \ 'allowlist': ['python'],
+    \ })
+endif
+
+if executable('bash-language-server')
+  autocmd User lsp_setup call lsp#register_server({
+    \ 'name': 'bash-language-server',
+    \ 'cmd': {server_info->[&shell, &shellcmdflag, 'bash-language-server start']},
+    \ 'allowlist': ['sh', 'bash'],
+    \ })
+endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => fzf
