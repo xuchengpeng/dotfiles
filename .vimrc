@@ -234,6 +234,7 @@ Plug 'AndrewRadev/splitjoin.vim', { 'on': ['SplitjoinJoin', 'SplitjoinSplit'] }
 Plug 'matze/vim-move'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
+Plug 'voldikss/vim-floaterm', { 'on': ['FloatermToggle', 'FloatermNew', 'FloatermKill', 'FloatermNext', 'FloatermPrev'] }
 call plug#end()
 
 
@@ -393,6 +394,20 @@ let g:NERDCreateDefaultMappings = 0
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => floaterm
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:floaterm_width = 0.7
+let g:floaterm_height = 0.7
+let g:floaterm_keymap_toggle = '<F12>'
+
+command! BtmTerm FloatermNew btm
+command! GduTerm FloatermNew gdu
+command! LazygitTerm FloatermNew lazygit
+command! GlowTerm FloatermNew glow
+command! PythonTerm FloatermNew python
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Keybinds
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:leader_key_map.b = {
@@ -436,6 +451,19 @@ let g:leader_key_map.l = {
   \ 't': ['<plug>(lsp-type-definition)', 'Goto Type Definition'],
   \ 'n': ['<plug>(lsp-next-diagnostic)', 'Next Diagnostic'],
   \ 'p': ['<plug>(lsp-previous-diagnostic)', 'Prev Diagnostic'],
+  \ }
+
+let g:leader_key_map.t = {
+  \ 'name': '+Terminal',
+  \ 't': ['FloatermNew', 'Terminal'],
+  \ 'b': ['BtmTerm', 'Bottom'],
+  \ 'd': ['GduTerm', 'Disk Usage'],
+  \ 'l': ['LazygitTerm', 'Lazygit'],
+  \ 'g': ['GlowTerm', 'Glow'],
+  \ 'p': ['PythonTerm', 'Python'],
+  \ 'K': ['FloatermKill', 'Kill Terminal'],
+  \ 'N': ['FloatermNext', 'Next Terminal'],
+  \ 'P': ['FloatermPrev', 'Prev Terminal'],
   \ }
 
 let g:leader_key_map.w = {
