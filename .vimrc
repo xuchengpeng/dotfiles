@@ -226,9 +226,9 @@ Plug 'junegunn/fzf.vim'
 Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 Plug 'mhinz/vim-grepper', { 'on': ['Grepper', '<plug>(GrepperOperator)']  }
 Plug 'RRethy/vim-illuminate'
-Plug 'preservim/nerdtree'
-Plug 'preservim/tagbar'
-Plug 'preservim/vim-indent-guides'
+Plug 'preservim/nerdtree', { 'on': ['NERDTreeToggle'] }
+Plug 'preservim/tagbar', { 'on': ['TagbarToggle'] }
+Plug 'preservim/vim-indent-guides', { 'on': ['IndentGuidesToggle'] }
 Plug 'preservim/nerdcommenter'
 Plug 'AndrewRadev/splitjoin.vim', { 'on': ['SplitjoinJoin', 'SplitjoinSplit'] }
 Plug 'matze/vim-move'
@@ -326,7 +326,7 @@ if executable('vim-language-server')
 endif
 
 if executable('pyright')
-  autocmd User lsp_setup cal lsp#register_server({
+  autocmd User lsp_setup call lsp#register_server({
     \ 'name': 'pyright-langserver',
     \ 'cmd': {server_info->[&shell, &shellcmdflag, 'pyright-langserver', '--stdio']},
     \ 'allowlist': ['python'],
@@ -463,4 +463,4 @@ nnoremap <silent> <localleader>g :Grepper<CR>
 let g:localleader_key_map.g = 'Grep'
 
 nnoremap <silent> <localleader>h :nohlsearch<cr>
-let g:localleader_key_map.h = 'No Highlight Seach'
+let g:localleader_key_map.h = 'No Highlight Search'
