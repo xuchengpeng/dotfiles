@@ -260,6 +260,10 @@ let g:startify_custom_header = [
 let g:startify_bookmarks = [
   \ { 'c': '~/.vimrc' },
   \ ]
+let g:startify_skiplist = [
+  \ '.*[/\\]\.\?vim[/\\].*[/\\]doc[/\\].*\.txt$',
+  \ '.*[/\\][tT]emp[/\\].*\.tmp$',
+  \ ]
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
