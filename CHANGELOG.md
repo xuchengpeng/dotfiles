@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.19](https://github.com/xuchengpeng/dotfiles/compare/v1.2.18...v1.2.19) (2023-12-14)
+
+
+### Bug Fixes
+
+* **ci:** test with vim ([2cc57ef](https://github.com/xuchengpeng/dotfiles/commit/2cc57ef346265e8c4fcc5a3a7c7e5a094afda386))
+* **fzf:** set environment variables ([7ec8f63](https://github.com/xuchengpeng/dotfiles/commit/7ec8f63e0c4fea3b97a30076ce056bb3db662451))
+* **terminal:** add floaterm ([f69ed1f](https://github.com/xuchengpeng/dotfiles/commit/f69ed1f98a5772fc94b3f82f7c6a5c62dd7b14be))
+* **vim-plug:** lazy load plugins ([a855c64](https://github.com/xuchengpeng/dotfiles/commit/a855c646adfdcb35038a9eb4ae1ec7064e564337))
+* **vim-startify:** add bookmarks ([3b59323](https://github.com/xuchengpeng/dotfiles/commit/3b593238bc744ef0d83cc71a60f8e81aa5948301))
+* **vim-startify:** exclude vim doc and system temp files ([2668340](https://github.com/xuchengpeng/dotfiles/commit/2668340afa906a9ff4cf371bb6dcdd929c828493))
+
 ## [1.2.18](https://github.com/xuchengpeng/dotfiles/compare/v1.2.17...v1.2.18) (2023-12-12)
 
 
