@@ -349,6 +349,10 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => fzf
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+command! -bang -nargs=? -complete=dir FzfFilesPreview
+  \ call fzf#vim#files(<q-args>, {'options': ['--preview', 'bat --color=always --style=plain {}']}, <bang>0)
+let $FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix'
+let $FZF_DEFAULT_OPTS='--border=sharp --info=inline'
 let g:fzf_layout = { 'down': '40%' }
 let g:fzf_command_prefix = 'Fzf'
 
