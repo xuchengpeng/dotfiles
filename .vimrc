@@ -140,7 +140,7 @@ set softtabstop=4
 set linebreak
 set textwidth=500
 
-set autoindent 
+set autoindent
 set smartindent
 set wrap
 
