@@ -350,23 +350,12 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => fzf
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-command! -bang -nargs=? -complete=dir Files call fzf#vim#files(<q-args>, <bang>0)
-command! -bang -nargs=? -complete=dir FilesPreview
-  \ call fzf#vim#files(<q-args>, {'options': ['--preview', 'bat --color=always --style=plain {}']}, <bang>0)
-command! -bar -bang -nargs=? -complete=buffer Buffers call fzf#vim#buffers(<q-args>, <bang>0)
-command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, <bang>0)
-command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case -- ".fzf#shellescape(<q-args>), <bang>0)
-command! -bang -nargs=* Tags call fzf#vim#tags(<q-args>, <bang>0)
-command! -bang -nargs=* BTags call fzf#vim#buffer_tags(<q-args>, <bang>0)
-command! -bar -bang History call fzf#vim#history(<bang>0)
-command! -bar -bang Windows call fzf#vim#windows(<bang>0)
-command! -bang -nargs=+ -complete=dir Locate call fzf#vim#locate(<q-args>, <bang>0)
-
 let $FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix'
 let $FZF_DEFAULT_OPTS='--border=sharp --info=inline'
 let g:fzf_layout = { 'down': '40%' }
 let g:fzf_vim = {}
 let g:fzf_vim.command_prefix = 'Fzf'
+let g:fzf_vim.preview_window = []
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -448,12 +437,12 @@ let g:leader_key_map.c = {
 
 let g:leader_key_map.f = {
   \ 'name': '+Fzf',
-  \ 'b': ['Buffers', 'Buffers'],
-  \ 'f': ['Files', 'Find Files'],
-  \ 'g': ['Rg', 'Grep'],
-  \ 'r': ['History', 'Recent Files'],
-  \ 't': ['BTags', 'Tags'],
-  \ 'w': ['Windows', 'Windows'],
+  \ 'b': ['FzfBuffers', 'Buffers'],
+  \ 'f': ['FzfFiles', 'Find Files'],
+  \ 'g': ['FzfRg', 'Grep'],
+  \ 'r': ['FzfHistory', 'Recent Files'],
+  \ 't': ['FzfBTags', 'Tags'],
+  \ 'w': ['FzfWindows', 'Windows'],
   \ }
 
 let g:leader_key_map.l = {
