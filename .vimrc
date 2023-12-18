@@ -407,11 +407,11 @@ let g:floaterm_width = 0.7
 let g:floaterm_height = 0.7
 let g:floaterm_keymap_toggle = '<F12>'
 
-command! BtmTerm FloatermNew btm
-command! GduTerm FloatermNew gdu
-command! LazygitTerm FloatermNew lazygit
-command! GlowTerm FloatermNew glow
-command! PythonTerm FloatermNew python
+command! BtmTerm FloatermNew --title=bottom btm
+command! GduTerm FloatermNew --title=DiskUsage gdu
+command! LazygitTerm FloatermNew --title=Lazygit lazygit
+command! GlowTerm FloatermNew --title=Glow glow
+command! PythonTerm FloatermNew --title=Python python
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
