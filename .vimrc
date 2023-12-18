@@ -368,16 +368,6 @@ let g:fzf_layout = { 'down': '40%' }
 let g:fzf_vim = {}
 let g:fzf_vim.command_prefix = 'Fzf'
 
-if has('win64') || has('win32')
-  if executable('pwsh')
-    set shell=pwsh
-    set shellcmdflag=-NoProfile\ -NoLogo\ -NonInteractive\ -ExecutionPolicy\ RemoteSigned\ -Command
-  else
-    set shell=cmd
-    set shellcmdflag=/C
-  endif
-endif
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-grepper
@@ -421,6 +411,9 @@ let g:NERDCreateDefaultMappings = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => floaterm
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if executable('pwsh')
+  let g:floaterm_shell = 'pwsh'
+endif
 let g:floaterm_width = 0.7
 let g:floaterm_height = 0.7
 let g:floaterm_keymap_toggle = '<F12>'
