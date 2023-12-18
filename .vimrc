@@ -364,7 +364,7 @@ let g:fzf_vim.preview_window = []
 let g:grepper = {
   \ 'tools': ['rg', 'git'],
   \ 'rg': {
-  \   'grepprg':    'rg --color never --smart-case --vimgrep',
+  \   'grepprg':    'rg --color never --smart-case --hidden -g!.git --vimgrep',
   \   'grepformat': '%f:%l:%m',
   \   'escape':     '\+*^$()[]',
   \ }}
