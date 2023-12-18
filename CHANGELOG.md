@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.2.20](https://github.com/xuchengpeng/dotfiles/compare/v1.2.19...v1.2.20) (2023-12-18)
+
+
+### Bug Fixes
+
+* **emacs:** bump v2.0.12 ([74df99e](https://github.com/xuchengpeng/dotfiles/commit/74df99e8e97e1985b124a7caef2d5e39426c2da8))
+* **floaterm:** add --title option ([21231c3](https://github.com/xuchengpeng/dotfiles/commit/21231c3384fdd8b17dbabb5765a941cb4ffb4278))
+* **floaterm:** use pwsh if executable ([1586874](https://github.com/xuchengpeng/dotfiles/commit/15868744bd476051499d5f30c0514af81b4a259b))
+* **fzf:** no preview by default ([e1d0ca3](https://github.com/xuchengpeng/dotfiles/commit/e1d0ca38ab960eccf6ff15409a8c431a5464a152))
+* **fzf:** set pwsh as shell if available ([0ef857b](https://github.com/xuchengpeng/dotfiles/commit/0ef857b55a3103f9445d48ac860400b2b1f0dc6c))
+* **vim-grepper:** add git grep options ([f2dc38b](https://github.com/xuchengpeng/dotfiles/commit/f2dc38b5bd2ed0512653016ac6dc45c146eea42d))
+* **vim-grepper:** search hidden files ([67c76f0](https://github.com/xuchengpeng/dotfiles/commit/67c76f0e40af98f8a7213e6917e379f460b03406))
+* **vim:** remove trailing whitespace ([0802097](https://github.com/xuchengpeng/dotfiles/commit/0802097ec9314afbd55abdb54eec5775b347fa22))
+* **vsnip:** add friendly-snippets ([57f9a20](https://github.com/xuchengpeng/dotfiles/commit/57f9a20b8b4fdd3c346fb112de48559638d76b47))
+
 ## [1.2.19](https://github.com/xuchengpeng/dotfiles/compare/v1.2.18...v1.2.19) (2023-12-14)
 
 
