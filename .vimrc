@@ -224,7 +224,7 @@ Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
-Plug 'mhinz/vim-grepper', { 'on': ['Grepper', '<plug>(GrepperOperator)']  }
+Plug 'mhinz/vim-grepper', { 'on': ['Grepper', 'GrepperRg', 'GrepperGit']  }
 Plug 'RRethy/vim-illuminate'
 Plug 'preservim/nerdtree', { 'on': ['NERDTreeToggle'] }
 Plug 'preservim/tagbar', { 'on': ['TagbarToggle'] }
@@ -364,10 +364,16 @@ let g:fzf_vim.preview_window = []
 let g:grepper = {
   \ 'tools': ['rg', 'git'],
   \ 'rg': {
-  \   'grepprg':    'rg --color never --smart-case --hidden -g!.git --vimgrep',
+  \   'grepprg': 'rg --color never --smart-case --hidden -g!.git --vimgrep',
   \   'grepformat': '%f:%l:%m',
-  \   'escape':     '\+*^$()[]',
-  \ }}
+  \   'escape': '\^$.*+?()[]{}|',
+  \ },
+  \ 'git': {
+  \   'grepprg': 'git grep -niI',
+  \   'grepformat': '%f:%l:%m',
+  \   'escape': '\^$.*[]',
+  \ },
+  \ }
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
