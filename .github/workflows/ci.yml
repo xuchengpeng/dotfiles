@@ -5,6 +5,25 @@ on:
   pull_request:
 
 jobs:
+  emacs-tests:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        emacs_version: [28.1, 28.2, 29.1, 29.2, release-snapshot, snapshot]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: 'recursive'
+      - uses: purcell/setup-emacs@master
+        with:
+          version: ${{ matrix.emacs_version }}
+      - name: Show emacs version
+        run: emacs --version
+      - name: Run emacs
+        run: |
+          cd emacs
+          emacs --debug-init --batch -l init.el
   neovim-tests:
     strategy:
       matrix:
@@ -43,6 +62,7 @@ jobs:
     name: release
     if: ${{ github.ref == 'refs/heads/main' }}
     needs:
+      - emacs-tests
       - neovim-tests
       - vim-tests
     runs-on: ubuntu-latest
