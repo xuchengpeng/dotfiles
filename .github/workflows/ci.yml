@@ -10,7 +10,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        emacs_version: [28.1, 28.2, 29.1, 29.2, release-snapshot, snapshot]
+        emacs_version: [29.1, 29.2, release-snapshot, snapshot]
     steps:
       - uses: actions/checkout@v4
         with:
@@ -23,6 +23,7 @@ jobs:
       - name: Run emacs
         run: |
           cd emacs
+          ln -s $(pwd) $HOME/.emacs.d
           emacs --debug-init --batch -l init.el
   neovim-tests:
     strategy:
