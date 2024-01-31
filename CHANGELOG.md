@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.2.21](https://github.com/xuchengpeng/dotfiles/compare/v1.2.20...v1.2.21) (2024-01-31)
+
+
+### Bug Fixes
+
+* **ci:** add emacs-tests ([8163f7d](https://github.com/xuchengpeng/dotfiles/commit/8163f7de0e70bf06ae0c222bf495516990dc6cb6))
+* **emacs:** bump v2.2.0 ([5c129b6](https://github.com/xuchengpeng/dotfiles/commit/5c129b6714e14b9b3563ea0b6a46c69bac2c20c8))
+* **license:** update copyright ([507db3d](https://github.com/xuchengpeng/dotfiles/commit/507db3d3cc97616d5ea89c2bb4e4675b4d1ba834))
+* **nvim:** bump v1.8.20 ([bd8a20d](https://github.com/xuchengpeng/dotfiles/commit/bd8a20d95cc8daa30b9818a59d784f45b0d3b4a7))
+* **tempel:** add templates ([a5fe9c0](https://github.com/xuchengpeng/dotfiles/commit/a5fe9c003007e3599cad15d118d860b435d1700d))
+
 ## [1.2.20](https://github.com/xuchengpeng/dotfiles/compare/v1.2.19...v1.2.20) (2023-12-18)
 
 
