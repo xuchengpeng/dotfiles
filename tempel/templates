@@ -77,7 +77,7 @@ org-mode
 (inlsrc "src_" p "{" q "}")
 (title "#+title: " p n "#+author: xuchengpeng" n "#+language: en")
 
-(blog-title "#+TITLE: " n "#+DATE: " (format-time-string "<%Y-%m-%d %a %H:%M>") n)
+(blog-title "#+TITLE: " n "#+DATE: " (format-time-string "<%Y-%m-%d %a %H:%M>") n n "#+HTML: <span class=\"post-meta\">" (format-time-string "%B %d, %Y") "</span>" n)
 (custom-id ":PROPERTIES:" n ":CUSTOM_ID: " p n ":END:" n)
 
 ;; Local Variables:
