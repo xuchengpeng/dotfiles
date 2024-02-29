@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.2.22](https://github.com/xuchengpeng/dotfiles/compare/v1.2.21...v1.2.22) (2024-02-29)
+
+
+### Bug Fixes
+
+* **emacs:** bump v2.2.1 ([ef69f87](https://github.com/xuchengpeng/dotfiles/commit/ef69f870d7ca3906e3d8f1660e97a3cad0a24d92))
+* **nvim:** bump v1.8.21 ([7e0272d](https://github.com/xuchengpeng/dotfiles/commit/7e0272d061c73deb9305a8cea9eda9a7eb2a53c9))
+* **readme:** update badge style ([c1f054e](https://github.com/xuchengpeng/dotfiles/commit/c1f054e77ca05e9b8b9ef2425d6e0286e23a34a1))
+* **tempel:** add post-meta for new posts ([78509fb](https://github.com/xuchengpeng/dotfiles/commit/78509fb41c82d62eaac211c461461b47703824dc))
+
 ## [1.2.21](https://github.com/xuchengpeng/dotfiles/compare/v1.2.20...v1.2.21) (2024-01-31)
 
 
