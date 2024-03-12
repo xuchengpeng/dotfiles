@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.23](https://github.com/xuchengpeng/dotfiles/compare/v1.2.22...v1.2.23) (2024-03-12)
+
+
+### Bug Fixes
+
+* **vim:** simple configuration ([794d5fd](https://github.com/xuchengpeng/dotfiles/commit/794d5fd1a3b24ef66364cd8b4aa2ce0a9da2819d))
+* **vim:** use forward slash ([974521c](https://github.com/xuchengpeng/dotfiles/commit/974521cc692bd007c385b3fc3769df830ecbd1c1))
+
 ## [1.2.22](https://github.com/xuchengpeng/dotfiles/compare/v1.2.21...v1.2.22) (2024-02-29)
 
 
