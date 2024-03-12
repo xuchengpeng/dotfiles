@@ -168,6 +168,7 @@ set number
 set cursorline
 set viminfo='100,n$HOME/.vim/files/info/viminfo
 set grepprg=rg\ --vimgrep
+set shellslash
 
 " Smart way to move between windows
 map <C-j> <C-W>j
