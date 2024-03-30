@@ -211,16 +211,6 @@ autocmd FileType qf,help,man nnoremap <buffer> <silent> q :quit<CR>
 set laststatus=2
 
 " Format the status line
-augroup ColorSchemes
-    autocmd!
-    autocmd ColorScheme * call StatusLineColors()
-augroup END
-
-function! StatusLineColors() abort
-    hi link User1 StatusLine
-    hi link User2 StatusLineTerm
-endfunction
-
 function! StatuslineMode()
     let l:mode=mode()
     if l:mode==#"n"
@@ -242,10 +232,10 @@ function! StatuslineMode()
     endif
 endfunction
 
-set statusline=\ %{winnr()}\ %2*\ %{StatuslineMode()}\ %*\ %F%m%r%h\ \ %l:%c\ %P\ %=\ %{&fileencoding}\ %{&fileformat}\ %{&filetype}\ 
+set statusline=\ %{winnr()}\ \ %{StatuslineMode()}\ \ %F%m%r%h\ \ %l:%c\ %P\ %=\ %{&fileencoding}\ %{&fileformat}\ %{&filetype}\ 
 
 try
-    colorscheme catppuccin_mocha
+    colorscheme dracula
 catch
 endtry
 
