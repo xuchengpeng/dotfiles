@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.2.23](https://github.com/xuchengpeng/dotfiles/compare/v1.2.22...v1.2.23) (2024-03-30)
+
+
+### Bug Fixes
+
+* **ci:** add emacs 29.3 to the CI matrix ([b48d89f](https://github.com/xuchengpeng/dotfiles/commit/b48d89f39bae7a10605db90d0ac1ab9cee13ac57))
+* **vim:** prefer dracula theme ([254f510](https://github.com/xuchengpeng/dotfiles/commit/254f5105e77bb41a88fd4113ce3495387c579647))
+* **vim:** simple configuration ([794d5fd](https://github.com/xuchengpeng/dotfiles/commit/794d5fd1a3b24ef66364cd8b4aa2ce0a9da2819d))
+* **vim:** use forward slash ([974521c](https://github.com/xuchengpeng/dotfiles/commit/974521cc692bd007c385b3fc3769df830ecbd1c1))
+
 ## [1.2.22](https://github.com/xuchengpeng/dotfiles/compare/v1.2.21...v1.2.22) (2024-02-29)
 
 
