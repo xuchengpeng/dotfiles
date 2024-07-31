@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.2.23](https://github.com/xuchengpeng/dotfiles/compare/v1.2.22...v1.2.23) (2024-07-31)
+
+
+### Bug Fixes
+
+* **ci:** add emacs 29.3 to the CI matrix ([b48d89f](https://github.com/xuchengpeng/dotfiles/commit/b48d89f39bae7a10605db90d0ac1ab9cee13ac57))
+* **ci:** add emacs 29.4 to the CI matrix ([30c265e](https://github.com/xuchengpeng/dotfiles/commit/30c265e54ab5a3ec478e4b7bcf892f87f3a62208))
+* **emacs:** bump v2.2.5 ([0022a9b](https://github.com/xuchengpeng/dotfiles/commit/0022a9b0328f4f0c92365929c9932cfcac2e125a))
+* **nvim:** bump v1.8.24 ([e7616f4](https://github.com/xuchengpeng/dotfiles/commit/e7616f4ba7417583ab6cd5cceee3e8bbe942a22d))
+* **tempel:** remove post-meta ([c621d30](https://github.com/xuchengpeng/dotfiles/commit/c621d301354c7c4374fc57587d7930da03794943))
+* **vim:** prefer dracula theme ([254f510](https://github.com/xuchengpeng/dotfiles/commit/254f5105e77bb41a88fd4113ce3495387c579647))
+* **vim:** simple configuration ([794d5fd](https://github.com/xuchengpeng/dotfiles/commit/794d5fd1a3b24ef66364cd8b4aa2ce0a9da2819d))
+* **vim:** use forward slash ([974521c](https://github.com/xuchengpeng/dotfiles/commit/974521cc692bd007c385b3fc3769df830ecbd1c1))
+
 ## [1.2.22](https://github.com/xuchengpeng/dotfiles/compare/v1.2.21...v1.2.22) (2024-02-29)
 
 
