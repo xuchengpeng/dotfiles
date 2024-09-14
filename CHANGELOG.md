@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.24](https://github.com/xuchengpeng/dotfiles/compare/v1.2.23...v1.2.24) (2024-09-14)
+
+
+### Bug Fixes
+
+* **ci:** remove deprecated release please action ([43b2e09](https://github.com/xuchengpeng/dotfiles/commit/43b2e098b990ec33b5d8d9ba4c0d61d076cc33f7))
+* **tempel:** add post-hr ([d43571d](https://github.com/xuchengpeng/dotfiles/commit/d43571d99c5aaf2465925c4c4ac1db76f4844bbf))
+
 ## [1.2.23](https://github.com/xuchengpeng/dotfiles/compare/v1.2.22...v1.2.23) (2024-07-31)
 
 
