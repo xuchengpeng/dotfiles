@@ -81,6 +81,10 @@ org-mode
 (custom-id ":PROPERTIES:" n ":CUSTOM_ID: " p n ":END:" n)
 (post-hr "#+begin_export html" n "<hr><br>" n "#+end_export" n)
 
+markdown-mode
+
+(hugo-front-matter "---" n "title: \""p"\"" n "date: \"" (format-time-string "%Y-%m-%d")  "\"" n "categories: ["p"]" n "tags: ["p"]" n "---" n)
+
 ;; Local Variables:
 ;; mode: lisp-data
 ;; outline-regexp: "[a-z]"
