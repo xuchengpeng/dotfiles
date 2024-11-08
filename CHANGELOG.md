@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.2.24](https://github.com/xuchengpeng/dotfiles/compare/v1.2.23...v1.2.24) (2024-11-08)
+
+
+### Bug Fixes
+
+* **ci:** remove deprecated release please action ([43b2e09](https://github.com/xuchengpeng/dotfiles/commit/43b2e098b990ec33b5d8d9ba4c0d61d076cc33f7))
+* **tempel:** add hugo-front-matter ([62b8bd8](https://github.com/xuchengpeng/dotfiles/commit/62b8bd864ea90ffe4a3521d20496eee0aefe7fb8))
+* **tempel:** add post-hr ([d43571d](https://github.com/xuchengpeng/dotfiles/commit/d43571d99c5aaf2465925c4c4ac1db76f4844bbf))
+
 ## [1.2.23](https://github.com/xuchengpeng/dotfiles/compare/v1.2.22...v1.2.23) (2024-07-31)
 
 
