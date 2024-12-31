@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.24](https://github.com/xuchengpeng/dotfiles/compare/v1.2.23...v1.2.24) (2024-12-31)
+
+
+### Bug Fixes
+
+* **ci:** remove deprecated release please action ([43b2e09](https://github.com/xuchengpeng/dotfiles/commit/43b2e098b990ec33b5d8d9ba4c0d61d076cc33f7))
+* **ci:** remove emacs 29.x ([5afb60f](https://github.com/xuchengpeng/dotfiles/commit/5afb60f598cdf3eb60b1ca3c0b8f857b56337e09))
+* **emacs:** bump v2.3.1 ([f4c2205](https://github.com/xuchengpeng/dotfiles/commit/f4c22050bc55e4b63f771d6b1b9384d60920f196))
+* **nvim:** bump v1.9.2 ([e478d93](https://github.com/xuchengpeng/dotfiles/commit/e478d9304f973ab8eea29854f5439b02fe39d2ee))
+* **tempel:** add hugo-front-matter ([88650cf](https://github.com/xuchengpeng/dotfiles/commit/88650cfd5bc0c78d794b2b92a8a543dc29ae4d53))
+* **tempel:** add post-hr ([d43571d](https://github.com/xuchengpeng/dotfiles/commit/d43571d99c5aaf2465925c4c4ac1db76f4844bbf))
+
 ## [1.2.23](https://github.com/xuchengpeng/dotfiles/compare/v1.2.22...v1.2.23) (2024-07-31)
 
 
