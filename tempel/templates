@@ -79,7 +79,7 @@ org-mode
 
 (blog-title "#+TITLE: " n "#+DATE: " (format-time-string "<%Y-%m-%d %a %H:%M>") n)
 (custom-id ":PROPERTIES:" n ":CUSTOM_ID: " p n ":END:" n)
-(post-hr "#+begin_export html" n "<hr><br>" n "#+end_export" n)
+(details "#+begin_details" n "#+begin_summary" n p n "#+end_summary" n n p n "#+end_details")
 
 markdown-mode
 
