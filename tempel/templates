@@ -80,6 +80,7 @@ org-mode
 (blog-title "#+TITLE: " n "#+DATE: " (format-time-string "<%Y-%m-%d %a %H:%M>") n)
 (custom-id ":PROPERTIES:" n ":CUSTOM_ID: " p n ":END:" n)
 (details "#+begin_details" n "#+begin_summary" n p n "#+end_summary" n n p n "#+end_details")
+(aside "#+begin_aside" n p n "#+end_aside")
 
 markdown-mode
 
