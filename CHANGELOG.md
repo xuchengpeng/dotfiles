@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.2.25](https://github.com/xuchengpeng/dotfiles/compare/v1.2.24...v1.2.25) (2025-02-13)
+
+
+### Bug Fixes
+
+* **ci:** fix download url ([f34c98a](https://github.com/xuchengpeng/dotfiles/commit/f34c98a05b753f4c4821ee09c3b900e66228b4cf))
+* **license:** update copyright year ([51fc1d2](https://github.com/xuchengpeng/dotfiles/commit/51fc1d21abf4b05fe90645e74941b5da13b3d78f))
+* **tempel:** add aside ([ff976e3](https://github.com/xuchengpeng/dotfiles/commit/ff976e3a52d318880de4e9ea70b1ec801a8e0d1d))
+* **tempel:** add details ([38e3398](https://github.com/xuchengpeng/dotfiles/commit/38e33982ad765a0b9ff837b816272ea7c7684b6d))
+
 ## [1.2.24](https://github.com/xuchengpeng/dotfiles/compare/v1.2.23...v1.2.24) (2024-12-31)
 
 
