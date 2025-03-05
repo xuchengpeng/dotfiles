@@ -1,4 +1,4 @@
-name: CI
+name: Test
 
 on:
   push:
@@ -10,7 +10,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        emacs_version: [release-snapshot, snapshot]
+        emacs_version: [30.1, release-snapshot, snapshot]
     steps:
       - uses: actions/checkout@v4
         with:
@@ -59,16 +59,3 @@ jobs:
         run: |
           sudo cp -f .vimrc ~/
           sudo vim --version
-  release:
-    name: release
-    if: ${{ github.ref == 'refs/heads/main' }}
-    needs:
-      - emacs-tests
-      - neovim-tests
-      - vim-tests
-    runs-on: ubuntu-latest
-    steps:
-      - uses: googleapis/release-please-action@v4
-        id: release
-        with:
-          release-type: simple
