@@ -42,8 +42,8 @@ jobs:
           sudo tar zxf /tmp/nvim-linux-x86_64.tar.gz -C /tmp/
       - name: Run Neovim
         run: |
-          sudo mkdir -p ~/.config/nvim
-          sudo cp -rf nvim/* ~/.config/nvim/
+          cd nvim
+          sudo ln -s $(pwd) ~/.config/nvim
           sudo /tmp/nvim-linux-x86_64/bin/nvim --version
           sudo /tmp/nvim-linux-x86_64/bin/nvim --headless -c "checkhealth" -c "quit" -c "quit"
   vim-tests:
