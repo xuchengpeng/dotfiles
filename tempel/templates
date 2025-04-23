@@ -83,6 +83,7 @@ org-mode
 markdown-mode
 
 (hugo-front-matter "---" n "title: \""p"\"" n "date: \"" (format-time-string "%Y-%m-%d")  "\"" n "categories: ["p"]" n "tags: ["p"]" n "---" n)
+(more "<!--more-->")
 
 ;; Local Variables:
 ;; mode: lisp-data
