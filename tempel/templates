@@ -82,7 +82,7 @@ org-mode
 
 markdown-mode
 
-(front-matter "+++" n "title = \""p"\"" n "date = " (format-time-string "%FT%T%z") n "categories = ["p"]" n "tags = ["p"]" n "+++")
+(front-matter "---" n "title: " p n "date: " (format-time-string "%FT%T%z") n "categories: ["p"]" n "tags: ["p"]" n "---")
 (more "<!--more-->")
 (ltr "{{% ltr %}}" n "{{% /ltr %}}")
 (rtl "{{% rtl %}}" n "{{% /rtl %}}")
