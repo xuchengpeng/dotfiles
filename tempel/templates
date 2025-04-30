@@ -84,9 +84,10 @@ markdown-mode
 
 (front-matter "---" n "title: " p n "date: " (format-time-string "%FT%T%z") n "categories: ["p"]" n "tags: ["p"]" n "---")
 (more "<!--more-->")
-(ltr "{{% ltr %}}" n "{{% /ltr %}}")
-(rtl "{{% rtl %}}" n "{{% /rtl %}}")
-(center "{{% center %}}" n "{{% /center %}}")
+(ltr "{{% ltr %}}" n p n "{{% /ltr %}}")
+(rtl "{{% rtl %}}" n p n "{{% /rtl %}}")
+(center "{{% center %}}" n p n "{{% /center %}}")
+(mermaid "{{< mermaid >}}" n p n "{{< /mermaid >}}")
 
 ;; Local Variables:
 ;; mode: lisp-data
