@@ -95,6 +95,7 @@ markdown-mode
 (bilibili "{{< bilibili id=\"" p "\" p=" p " >}}")
 (tabpane "{{< tabpane align=\"" p "\" >}}" n q n "{{< /tabpane >}}")
 (tab "{{< tab \"" p "\" >}}" n q n "{{< /tab >}}")
+(columns "{{< columns >}}" n q n "<--->" n n "{{< /columns >}}")
 
 ;; Local Variables:
 ;; mode: lisp-data
