@@ -84,15 +84,17 @@ markdown-mode
 
 (front-matter "---" n "title: " p n "date: " (format-time-string "%FT%T%z") n "categories: ["p"]" n "tags: ["p"]" n "---")
 (more "<!--more-->")
-(ltr "{{% ltr %}}" n p n "{{% /ltr %}}")
-(rtl "{{% rtl %}}" n p n "{{% /rtl %}}")
-(center "{{% center %}}" n p n "{{% /center %}}")
-(mermaid "{{< mermaid >}}" n p n "{{< /mermaid >}}")
-(details "{{< details summary=\"" p "\" >}}" n p n "{{< /details >}}")
+(ltr "{{% ltr %}}" n q n "{{% /ltr %}}")
+(rtl "{{% rtl %}}" n q n "{{% /rtl %}}")
+(center "{{% center %}}" n q n "{{% /center %}}")
+(mermaid "{{< mermaid >}}" n q n "{{< /mermaid >}}")
+(details "{{< details summary=\"" p "\" >}}" n q n "{{< /details >}}")
 (figure "{{< figure" n "  src=\"" p "\"" n "  alt=\"" p "\"" n "  caption=\"" p "\"" n "  class=\"" p "\"" n ">}}")
-(highlight "{{< highlight " p " >}}" n p n "{{< /highlight >}}")
-(typeit "{{< typeit" n "  tag=\"" p "\"" n "  class=\"" p "\"" n "  initialString=\"" p "\"" n "  speed=" p n "  lifeLike=" p n "  startDelay=" p n "  breakLines=" p n "  waitUntilVisible=" p n "  loop=" p n ">}}" n p n "{{< /typeit >}}")
+(highlight "{{< highlight " p " >}}" n q n "{{< /highlight >}}")
+(typeit "{{< typeit" n "  tag=\"" p "\"" n "  class=\"" p "\"" n "  initialString=\"" p "\"" n "  speed=" p n "  lifeLike=" p n "  startDelay=" p n "  breakLines=" p n "  waitUntilVisible=" p n "  loop=" p n ">}}" n q n "{{< /typeit >}}")
 (bilibili "{{< bilibili id=\"" p "\" p=" p " >}}")
+(tabpane "{{< tabpane align=\"" p "\" >}}" n q n "{{< /tabpane >}}")
+(tab "{{< tab \"" p "\" >}}" n q n "{{< /tab >}}")
 
 ;; Local Variables:
 ;; mode: lisp-data
