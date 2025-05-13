@@ -92,6 +92,7 @@ markdown-mode
 (figure "{{< figure" n "  src=\"" p "\"" n "  alt=\"" p "\"" n "  caption=\"" p "\"" n "  class=\"" p "\"" n ">}}")
 (highlight "{{< highlight " p " >}}" n p n "{{< /highlight >}}")
 (typeit "{{< typeit" n "  tag=\"" p "\"" n "  class=\"" p "\"" n "  initialString=\"" p "\"" n "  speed=" p n "  lifeLike=" p n "  startDelay=" p n "  breakLines=" p n "  waitUntilVisible=" p n "  loop=" p n ">}}" n p n "{{< /typeit >}}")
+(bilibili "{{< bilibili id=\"" p "\" p=" p " >}}")
 
 ;; Local Variables:
 ;; mode: lisp-data
