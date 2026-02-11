@@ -75,7 +75,7 @@ org-mode
 (gnuplot "#+begin_src gnuplot :var data=" (p "table") " :file " (p "plot.png") n r n "#+end_src" :post (org-edit-src-code))
 (elisp "#+begin_src emacs-lisp" n r n "#+end_src")
 (inlsrc "src_" p "{" q "}")
-(title "#+TITLE: " n "#+AUTHOR: " n "#+DATE: " (format-time-string "<%Y-%m-%d %a %H:%M>") n)
+(title "#+TITLE: " n "#+AUTHOR: " n "#+DESCRIPTION: " n "#+KEYWORDS: " n "#+DATE: " (format-time-string "<%Y-%m-%d %a %H:%M>") n)
 (custom-id ":PROPERTIES:" n ":CUSTOM_ID: " p n ":END:" n)
 (details "#+begin_details" n "#+begin_summary" n p n "#+end_summary" n n p n "#+end_details")
 (aside "#+begin_aside" n p n "#+end_aside")
@@ -96,6 +96,8 @@ markdown-mode
 (tabpane "{{< tabpane align=\"" p "\" >}}" n q n "{{< /tabpane >}}")
 (tab "{{< tab \"" p "\" >}}" n q n "{{< /tab >}}")
 (columns "{{< columns >}}" n "- " q n n "- " n n "{{< /columns >}}")
+(alert "{{< alert \"" p "\" >}}" n q n "{{< /alert >}}")
+(badge "{{< badge title=\"" p "\" value=\"" p "\" >}}")
 
 ;; Local Variables:
 ;; mode: lisp-data
