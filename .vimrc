@@ -235,7 +235,7 @@ endfunction
 set statusline=\ %{winnr()}\ \ %{StatuslineMode()}\ \ %F%m%r%h\ \ %l:%c\ %P\ %=\ %{&fileencoding}\ %{&fileformat}\ %{&filetype}\ 
 
 try
-    colorscheme dracula
+    colorscheme desert
 catch
 endtry
 
@@ -260,6 +260,5 @@ endif
 " Remove the Windows ^M - when the encodings gets messed up
 noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
-" Disable highlight when <leader><cr> is pressed
-map <silent> <leader>h :noh<cr>
-
+" Disable highlight when <esc> is pressed
+nnoremap <silent> <esc> :nohlsearch<cr><esc>
